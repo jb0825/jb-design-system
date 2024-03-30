@@ -4,7 +4,10 @@ const path = require("path");
 const resolvePath = (_path) => path.join(process.cwd(), _path);
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/components/**/*.mdx",
+    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-onboarding",
@@ -20,8 +23,18 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: ["../assets"],
   webpackFinal: async (config: any) => {
-    // storybook 에 emotion 관련 babel 설정추가
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@components": path.resolve(__dirname, "../src/components"),
+      "@constants": path.resolve(__dirname, "../src/constants"),
+      "@types": path.resolve(__dirname, "../src/types"),
+      "@hooks": path.resolve(__dirname, "../src/hooks"),
+      "@utils": path.resolve(__dirname, "../src/utils"),
+      "@icons": path.resolve(__dirname, "../assets/icons"),
+    };
+    // storybook emotion babel setting
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve("babel-loader"),

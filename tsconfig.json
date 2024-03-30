@@ -13,7 +13,12 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks": ["src/hooks"],
+      "@types": ["src/types"],
+      "@icons": ["assets/icons"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
