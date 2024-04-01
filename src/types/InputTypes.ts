@@ -5,7 +5,7 @@ export interface ButtonProps {
   disabled: boolean;
 
   /**
-   * type 이 'icon' 인 경우, 화면에 표출할 아이콘 이미지
+   * 화면에 표출할 아이콘 이미지
    */
   icon?: string;
 

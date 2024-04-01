@@ -91,11 +91,8 @@ export const Button = ({
         `}
         onClick={onClickHandler}
       >
-        {type === "icon" && icon ? (
-          <img src={icon} />
-        ) : (
-          label && <span css={ButtonLabelCss}>{label}</span>
-        )}
+        {icon && <img src={icon} />}
+        {type !== "icon" && label && <span css={ButtonLabelCss}>{label}</span>}
         {/** Button Click Animation */}
         {!disabled && <ClickAnimation {...getClickAnimationConfig()} />}
       </div>
