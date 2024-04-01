@@ -1,7 +1,3 @@
-import { useClickAnimation } from "@hooks";
-import React, { useRef } from "react";
-import { SpanCss } from "./ClickAnimationCss";
-
 export interface AnimationConfig {
   /**
    * 애니메이션이 커지는 최대 사이즈 (px)
@@ -20,16 +16,3 @@ export interface AnimationConfig {
    */
   isPositionFixed?: boolean;
 }
-
-/**
- * Click Animation Component
- * @param config
- * @returns
- */
-export const ClickAnimation = (config: AnimationConfig) => {
-  const spanRef = useRef<HTMLSpanElement>(null);
-
-  useClickAnimation(spanRef, config);
-
-  return <span ref={spanRef} css={SpanCss} />;
-};

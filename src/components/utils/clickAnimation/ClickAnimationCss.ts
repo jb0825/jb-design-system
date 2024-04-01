@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 /** Global Click Animation Style */
-export const GlobalCss = css`
+export const AnimationlCss = css`
   .effect-container {
     position: relative;
     overflow: hidden;

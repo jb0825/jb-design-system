@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "@types";
+import { AnimationConfig, ButtonProps } from "@types";
 import {
   ButtonCss,
   ButtonDefaultCss,
@@ -9,10 +9,9 @@ import {
 } from "./ButtonStyle";
 import { Global, css } from "@emotion/react";
 import {
-  AnimationConfig,
   ClickAnimation,
-  GlobalCss,
-} from "@utils/clickAnimation";
+  AnimationlCss,
+} from "@components/utils/clickAnimation";
 import { PRIMARY_COLOR } from "@constants/defines";
 
 export const Button = ({
@@ -77,7 +76,7 @@ export const Button = ({
     <>
       <Global
         styles={css`
-          ${GlobalCss}
+          ${AnimationlCss}
         `}
       />
       <div

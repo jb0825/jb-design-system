@@ -1,4 +1,4 @@
-import { AnimationConfig } from "@utils/clickAnimation/ClickAnimation";
+import { AnimationConfig } from "@types";
 import { useEffect } from "react";
 
 /**
