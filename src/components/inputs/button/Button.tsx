@@ -7,12 +7,9 @@ import {
   ButtonLabelCss,
   ButtonPrimaryCss,
 } from "./ButtonStyle";
-import { Global, css } from "@emotion/react";
-import {
-  ClickAnimation,
-  AnimationlCss,
-} from "@components/utils/clickAnimation";
+import { css } from "@emotion/react";
 import { PRIMARY_COLOR } from "@constants/defines";
+import { ClickAnimation } from "@components/utils";
 
 export const Button = ({
   disabled,
@@ -73,29 +70,22 @@ export const Button = ({
   };
 
   return (
-    <>
-      <Global
-        styles={css`
-          ${AnimationlCss}
-        `}
-      />
-      <div
-        css={css`
-          ${ButtonCss}
-          ${getButtonCss()}
+    <div
+      css={css`
+        ${ButtonCss}
+        ${getButtonCss()}
           ${disabled && "opacity: 0.5; cursor: default;"}
           ${width && `width: ${width};`}
           ${height && `height: ${height};`}
           max-width : ${width || "200px"};
-        `}
-        onClick={onClickHandler}
-      >
-        {icon && <img src={icon} />}
-        {type !== "icon" && label && <span css={ButtonLabelCss}>{label}</span>}
-        {/** Button Click Animation */}
-        {!disabled && <ClickAnimation {...getClickAnimationConfig()} />}
-      </div>
-    </>
+      `}
+      onClick={onClickHandler}
+    >
+      {icon && <img src={icon} />}
+      {type !== "icon" && label && <span css={ButtonLabelCss}>{label}</span>}
+      {/** Button Click Animation */}
+      {!disabled && <ClickAnimation {...getClickAnimationConfig()} />}
+    </div>
   );
 };
 
