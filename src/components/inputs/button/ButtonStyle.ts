@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 export const ButtonCss = css`
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
