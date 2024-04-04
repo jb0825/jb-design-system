@@ -22,6 +22,9 @@ export const Input = ({
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(defaultValue);
 
+  /**
+   * Input Change Event Handler
+   */
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 

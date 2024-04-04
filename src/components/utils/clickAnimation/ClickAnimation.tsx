@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 
 interface ClickAnimationProps extends AnimationConfig {
   children?: JSX.Element;
+  disabled?: boolean;
 }
 
 /**
@@ -14,6 +15,7 @@ interface ClickAnimationProps extends AnimationConfig {
  */
 export const ClickAnimation = ({
   children,
+  disabled,
   ...config
 }: ClickAnimationProps) => {
   const spanRef = useRef<HTMLDivElement>(null);
@@ -33,6 +35,7 @@ export const ClickAnimation = ({
         align-items: center;
         justify-content: center;
       `}
+      aria-disabled={disabled}
     >
       {children}
     </div>

@@ -29,6 +29,10 @@ export default () => {
           background: var(--effect-color);
         }
 
+        .effect-container[aria-disabled="true"]::before {
+          display: none;
+        }
+
         .effect-container.active::before {
           border-radius: 50%;
           animation: ripple var(--effect-duration) linear forwards;

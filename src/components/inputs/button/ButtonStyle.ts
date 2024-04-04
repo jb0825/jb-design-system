@@ -17,6 +17,7 @@ export const ButtonCss = css`
   cursor: pointer;
   user-select: none;
   position: relative;
+  width: fit-content;
   height: 36px;
 `;
 

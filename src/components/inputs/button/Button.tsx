@@ -77,7 +77,6 @@ export const Button = ({
           ${disabled && "opacity: 0.5; cursor: default;"}
           ${width && `width: ${width};`}
           ${height && `height: ${height};`}
-          max-width : ${width || "200px"};
       `}
       onClick={onClickHandler}
     >
