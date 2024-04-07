@@ -89,6 +89,40 @@ export interface CheckboxGroupProps {
 }
 
 /**
+ * DatePicker component properties
+ */
+export interface DatePickerProps {
+  /**
+   * 이 옵션이 true 일 시, DatePicker 는 비활성화 되며 값을 선택할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * DatePicker 라벨
+   */
+  label?: string;
+  /**
+   * DatePicker 달력에 표출될 언어 설정
+   */
+  locale: "ko" | "en";
+  /**
+   * DatePicker value change 핸들러
+   */
+  onValueChange?: (value: Date) => void;
+  /**
+   * DatePicker placeholder
+   */
+  placeholder?: string;
+  /**
+   * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   */
+  required: boolean;
+  /**
+   * DatePicker 값
+   */
+  value: Date | string;
+}
+
+/**
  * CheckboxGroup, RadioGroup items type
  */
 export interface GroupItems {
@@ -184,11 +218,15 @@ export interface InputProps {
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   /**
+   * 이 옵션이 true 일 시, Input 은 값을 입력할 수 없음.
+   */
+  readonly: boolean;
+  /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
    */
   required: boolean;
   /**
-   * Input value 입력 전 표시될 텍스트
+   * Input placeholder
    */
   placeholder?: string;
   /**

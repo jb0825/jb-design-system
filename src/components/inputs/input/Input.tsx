@@ -15,6 +15,7 @@ export const Input = ({
   label,
   onBlur,
   onChange,
+  readonly,
   required,
   placeholder,
   type,
@@ -26,7 +27,7 @@ export const Input = ({
    * Input Change Event Handler
    */
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) return;
+    if (disabled || readonly) return;
 
     setInputValue(e.target.value);
     onChange && onChange(e);
@@ -43,6 +44,7 @@ export const Input = ({
         css={css`
           ${InputCss}
           ${disabled && "opacity: 0.5;"}
+          ${readonly && "cursor: default;"}
         `}
         onBlur={onBlur}
         onChange={onInputChange}
@@ -50,6 +52,7 @@ export const Input = ({
         type={type}
         value={inputValue}
         disabled={disabled}
+        readOnly={readonly}
       />
       <span css={LabelCss}>
         {label}
@@ -62,5 +65,6 @@ export const Input = ({
 Input.defaultProps = {
   defaultValue: "",
   disabled: false,
+  readonly: false,
   required: false,
 };

@@ -2,6 +2,7 @@ export type {
   ButtonProps,
   CheckboxProps,
   CheckboxGroupProps,
+  DatePickerProps,
   GroupItems,
   RadioProps,
   RadioGroupProps,
