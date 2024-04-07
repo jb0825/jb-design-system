@@ -67,9 +67,31 @@ export interface CheckboxProps {
 }
 
 /**
- * CheckboxGroup items type
+ * CheckboxGroup component properties
  */
-export interface CheckboxGroupItems {
+export interface CheckboxGroupProps {
+  /**
+   * 이 옵션이 true 일 시, 모든 item 은 비활성화 되며 클릭할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * CheckboxGroup items
+   */
+  items: GroupItems[];
+  /**
+   * CheckboxGroup value change 핸들러
+   */
+  onValueChange: (values: string[]) => void;
+  /**
+   * CheckboxGroup 값
+   */
+  value: string[];
+}
+
+/**
+ * CheckboxGroup, RadioGroup items type
+ */
+export interface GroupItems {
   /**
    * CheckboxGroup item checkbox 비활성화 여부
    */
@@ -85,25 +107,51 @@ export interface CheckboxGroupItems {
 }
 
 /**
- * CheckboxGroup component properties
+ * Radio component properties
  */
-export interface CheckboxGroupProps {
+export interface RadioProps {
+  /**
+   * Radio 체크 여부
+   */
+  checked: boolean;
+  /**
+   * 이 옵션이 true 일 시, Radio 는 비활성화 되며 클릭할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * Radio 라벨
+   */
+  label?: string;
+  /**
+   * Radio value change 핸들러
+   */
+  onValueChange?: (checked: boolean) => void;
+  /**
+   * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   */
+  required: boolean;
+}
+
+/**
+ * RadioGroup component properties
+ */
+export interface RadioGroupProps {
   /**
    * 이 옵션이 true 일 시, 모든 item 은 비활성화 되며 클릭할 수 없음.
    */
   disabled: boolean;
   /**
-   * CheckboxGroup items
+   * RadioGroup items
    */
-  items: CheckboxGroupItems[];
+  items: GroupItems[];
   /**
-   * CheckboxGroup value change 핸들러
+   * RadioGroup value change 핸들러
    */
-  onValueChange: (values: string[]) => void;
+  onValueChange: (values: string) => void;
   /**
-   * CheckboxGroup 값
+   * RadioGroup 값
    */
-  value: string[];
+  value: string;
 }
 
 /**
