@@ -7,5 +7,6 @@ export type {
   RadioProps,
   RadioGroupProps,
   InputProps,
+  TimePickerProps,
 } from "./InputTypes";
 export type { AnimationConfig } from "./UtilTypes";

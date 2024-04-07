@@ -47,4 +47,8 @@ export const DatePickerCss = css`
     height: 7px;
     top: 8px;
   }
+  .react-datepicker-popper[data-placement^="bottom"]
+    .react-datepicker__triangle {
+    fill: #ffffff;
+  }
 `;

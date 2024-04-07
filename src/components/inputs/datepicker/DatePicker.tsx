@@ -65,6 +65,7 @@ export const DatePicker = ({
         selected={date}
         onChange={onDateValueChange}
         customInput={<CustomInput />}
+        disabled={disabled}
         dateFormat="yyyy-MM-dd"
         locale={datePickerLocale}
         disabledKeyboardNavigation

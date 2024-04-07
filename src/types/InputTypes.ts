@@ -119,7 +119,7 @@ export interface DatePickerProps {
   /**
    * DatePicker 값
    */
-  value: Date | string;
+  value: Date | string | null;
 }
 
 /**
@@ -237,4 +237,34 @@ export interface InputProps {
    * Input 값
    */
   value?: string | number;
+}
+
+/**
+ * TimePicker component property
+ */
+export interface TimePickerProps {
+  /**
+   * 이 옵션이 true 일 시, TimePicker 는 비활성화 되며 값을 선택할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * TimePicker 라벨
+   */
+  label?: string;
+  /**
+   * TimePicker value change 핸들러
+   */
+  onValueChange?: (value: Date) => void;
+  /**
+   * TimePicker placeholder
+   */
+  placeholder?: string;
+  /**
+   * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   */
+  required: boolean;
+  /**
+   * TimePicker 값
+   */
+  value: Date | string | null;
 }
