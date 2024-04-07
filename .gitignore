@@ -3,5 +3,6 @@
 
 ### react ###
 node_modules
+yarn.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/react

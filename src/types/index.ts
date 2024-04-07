@@ -1,2 +1,7 @@
-export type { ButtonProps, InputProps } from "./InputTypes";
+export type {
+  ButtonProps,
+  CheckboxProps,
+  CheckboxGroupProps,
+  InputProps,
+} from "./InputTypes";
 export type { AnimationConfig } from "./UtilTypes";
