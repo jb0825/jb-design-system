@@ -237,6 +237,44 @@ export interface SelectProps {
 }
 
 /**
+ * Textarea component properties
+ */
+export interface TextareaProps {
+  /**
+   * 이 옵션이 true 일 시, Textarea 는 비활성화 되며 값을 입력할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * Textarea 라벨
+   */
+  label?: string;
+  /**
+   * Textarea Change 이벤트 핸들러
+   */
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  /**
+   * 이 옵션이 true 일 시, Textarea 은 값을 입력할 수 없음.
+   */
+  readonly: boolean;
+  /**
+   * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   */
+  required: boolean;
+  /**
+   * Textarea emotion CSS or Style object
+   */
+  style?: React.CSSProperties;
+  /**
+   * Textarea placeholder
+   */
+  placeholder?: string;
+  /**
+   * Textarea 값
+   */
+  value?: string;
+}
+
+/**
  * Input component properties
  */
 export interface InputProps {

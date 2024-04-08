@@ -8,6 +8,7 @@ export type {
   RadioGroupProps,
   Options,
   SelectProps,
+  TextareaProps,
   InputProps,
   TimePickerProps,
 } from "./InputTypes";
