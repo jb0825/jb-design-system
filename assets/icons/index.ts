@@ -1,3 +1,4 @@
+import arrow from "./arrow.svg";
 import search from "./search.svg";
 
-export { search };
+export { arrow, search };

@@ -188,6 +188,54 @@ export interface RadioGroupProps {
   value: string;
 }
 
+export interface Options {
+  /**
+   * Option label
+   */
+  label: string;
+  /**
+   * Option 값
+   */
+  value: string;
+  /**
+   * 이 옵션이 true 일 시, Option 은 선택할 수 없음
+   */
+  disabled?: boolean;
+}
+/**
+ * Select component properties
+ */
+export interface SelectProps {
+  /**
+   * 이 옵션이 true 일 시, Select 는 비활성화 되며 값을 선택할 수 없음.
+   */
+  disabled: boolean;
+  /**
+   * Select 라벨
+   */
+  label?: string;
+  /**
+   * Select options
+   */
+  options: Options[];
+  /**
+   * Select value change 핸들러
+   */
+  onValueChange: (value: string) => void;
+  /**
+   * 이 옵션이 true 일 시, Select 은 값을 선택할 수 없음.
+   */
+  readonly: boolean;
+  /**
+   * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   */
+  required: boolean;
+  /**
+   * Select 값
+   */
+  value?: string;
+}
+
 /**
  * Input component properties
  */

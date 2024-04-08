@@ -11,6 +11,7 @@ export const InputCss = css`
   padding: 0 12px;
   font-size: 14px;
   box-sizing: border-box;
+  width: 100%;
   height: 36px;
   border-radius: 6px;
   outline: none;

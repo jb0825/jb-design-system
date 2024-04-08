@@ -6,6 +6,8 @@ export type {
   GroupItems,
   RadioProps,
   RadioGroupProps,
+  Options,
+  SelectProps,
   InputProps,
   TimePickerProps,
 } from "./InputTypes";
