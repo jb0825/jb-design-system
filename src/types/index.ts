@@ -1,3 +1,4 @@
+export type { Columns, TableProps } from "./DataDisplayTypes";
 export type {
   ButtonProps,
   CheckboxProps,
