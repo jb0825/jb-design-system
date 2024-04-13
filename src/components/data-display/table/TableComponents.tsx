@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import React from "react";
 import {
   HeadCellChildCss,
@@ -12,14 +11,19 @@ import {
   TableRowCss,
 } from "./TableStyle";
 import { SortDirection } from "@tanstack/react-table";
-import { SortIcon } from "./Icon";
+import { SortIcon } from "./icons";
 
 interface TableProps {
   children?: React.ReactNode | JSX.Element;
+  style?: React.CSSProperties;
 }
 
-export const Table = ({ children }: TableProps) => {
-  return <table css={TableCss}>{children}</table>;
+export const Table = ({ children, style }: TableProps) => {
+  return (
+    <table css={TableCss} style={style}>
+      {children}
+    </table>
+  );
 };
 
 export const TableHead = ({ children }: TableProps) => {
@@ -48,6 +52,7 @@ export const TableHeadCell = ({
   isCanSort,
   onClick,
   sortState,
+  style,
 }: TableHeadCellProps) => {
   const onHeadCellClick = (e: any) => {
     if (!isCanSort) return;
@@ -55,10 +60,10 @@ export const TableHeadCell = ({
   };
 
   return (
-    <th css={TableHeadCellCss} onClick={onHeadCellClick}>
+    <th css={TableHeadCellCss} style={style}>
       <div css={HeadCellChildCss}>
         {children}
-        {isCanSort && <SortIcon sort={sortState} />}
+        {isCanSort && <SortIcon sort={sortState} onClick={onHeadCellClick} />}
       </div>
     </th>
   );

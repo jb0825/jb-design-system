@@ -115,3 +115,23 @@ export const TableFootCellCss = css`
   border-bottom: none;
   border-top: 1px solid #dddddd;
 `;
+
+/** Resizer */
+export const ResizerBoxCss = css`
+  position: absolute;
+  top: 0;
+  right: -7px;
+  width: 5px;
+  height: 100%;
+  padding: 0 5px;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ResizerCss = css`
+  background: #dddddd;
+  width: 1px;
+  height: 60%;
+`;

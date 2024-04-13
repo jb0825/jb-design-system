@@ -1,8 +1,14 @@
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
+import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 import React from "react";
 
-export const SortIcon = ({ sort }: { sort?: "asc" | "desc" | false }) => {
+export const SortIcon = ({
+  sort,
+  onClick,
+}: {
+  sort?: "asc" | "desc" | false;
+  onClick: (e: any) => void;
+}) => {
   const defaultColor = "#C9C9C9";
   const selectColor = PRIMARY_COLOR;
 
@@ -11,6 +17,7 @@ export const SortIcon = ({ sort }: { sort?: "asc" | "desc" | false }) => {
       css={css`
         cursor: pointer;
       `}
+      onClick={onClick}
     >
       <svg
         width="10"

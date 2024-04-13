@@ -18,11 +18,13 @@ import {
   Table as TableMain,
   TableRow,
 } from "./TableComponents";
+import { Resizer } from "./Resizer";
 
 export const Table = ({ columns, data, enableFooter }: TableProps) => {
   const [tableColumns, setTableColumns] = useState<Columns[]>(columns);
   const [tableData, setTableData] = useState<Object[]>(data);
 
+  // Column sorting
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
   const table = useReactTable({
@@ -31,6 +33,7 @@ export const Table = ({ columns, data, enableFooter }: TableProps) => {
     state: {
       sorting,
     },
+    columnResizeMode: "onChange",
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -46,7 +49,7 @@ export const Table = ({ columns, data, enableFooter }: TableProps) => {
 
   return (
     <div css={TableBoxCss}>
-      <TableMain>
+      <TableMain style={{ width: table.getCenterTotalSize() }}>
         <TableHead>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -58,11 +61,13 @@ export const Table = ({ columns, data, enableFooter }: TableProps) => {
                     isCanSort={header.column.columnDef.useSorting}
                     onClick={header.column.getToggleSortingHandler()}
                     sortState={header.column.getIsSorted()}
+                    style={{ width: header.getSize() }}
                   >
                     {flexRender(
                       header.column.columnDef.header,
                       header.getContext()
                     )}
+                    <Resizer header={header} />
                   </TableHeadCell>
                 );
               })}
