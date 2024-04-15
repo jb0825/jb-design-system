@@ -11,4 +11,6 @@ export interface TableProps {
   columns: Columns[];
   data: Object[];
   enableFooter: boolean;
+  enableRowSelection: boolean;
+  onRowSelectionChange?: (rowSelection: Record<string, boolean>) => void;
 }

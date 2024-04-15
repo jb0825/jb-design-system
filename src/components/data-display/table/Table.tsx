@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   SortingState,
   flexRender,
@@ -6,9 +6,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Columns, TableProps } from "@types";
-import { TableBoxCss } from "./TableStyle";
+import { TableProps } from "@types";
+import { TableBoxCss, FlexDiv } from "./TableStyle";
 import {
+  IndeterminateCheckbox,
   TableBody,
   TableBodyCell,
   TableFoot,
@@ -20,32 +21,77 @@ import {
 } from "./TableComponents";
 import { Resizer } from "./Resizer";
 
-export const Table = ({ columns, data, enableFooter }: TableProps) => {
-  const [tableColumns, setTableColumns] = useState<Columns[]>(columns);
+export const Table = ({
+  columns,
+  data,
+  enableFooter,
+  enableRowSelection,
+  onRowSelectionChange,
+}: TableProps) => {
   const [tableData, setTableData] = useState<Object[]>(data);
 
   // Column sorting
   const [sorting, setSorting] = React.useState<SortingState>([]);
+
+  // Row Selection
+  const [rowSelection, setRowSelection] = React.useState<
+    Record<string, boolean>
+  >({});
+
+  const tableColumns = useMemo(() => {
+    const temp: any = columns;
+    if (enableRowSelection)
+      temp.unshift({
+        id: "select",
+        size: 50,
+        header: ({ table }: any) => {
+          return (
+            <IndeterminateCheckbox
+              {...{
+                checked: table.getIsAllRowsSelected(),
+                indeterminate: table.getIsSomeRowsSelected(),
+                onChange: table.getToggleAllRowsSelectedHandler(),
+              }}
+            />
+          );
+        },
+        cell: ({ row }: any) => (
+          <FlexDiv>
+            <IndeterminateCheckbox
+              {...{
+                checked: row.getIsSelected(),
+                disabled: !row.getCanSelect(),
+                indeterminate: row.getIsSomeSelected(),
+                onChange: row.getToggleSelectedHandler(),
+              }}
+            />
+          </FlexDiv>
+        ),
+      });
+    return temp;
+  }, [columns, enableRowSelection]);
 
   const table = useReactTable({
     columns: tableColumns,
     data: tableData,
     state: {
       sorting,
+      rowSelection,
     },
     columnResizeMode: "onChange",
-    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
+    onRowSelectionChange: setRowSelection,
+    onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
   });
 
   useEffect(() => {
-    setTableColumns(columns);
-  }, [columns]);
-
-  useEffect(() => {
     setTableData(data);
   }, [data]);
+
+  useEffect(() => {
+    onRowSelectionChange && onRowSelectionChange(rowSelection);
+  }, [rowSelection]);
 
   return (
     <div css={TableBoxCss}>
@@ -110,4 +156,5 @@ export const Table = ({ columns, data, enableFooter }: TableProps) => {
 
 Table.defaultProps = {
   enableFooter: false,
+  enableRowSelection: false,
 };

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
 export const TableBoxCss = css`
   width: 100%;
@@ -37,7 +38,7 @@ export const TableHeadCss = css`
   top: 0px;
   height: 36px;
   background-color: #f9f9f9;
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const TableBodyCss = css`
@@ -134,4 +135,10 @@ export const ResizerCss = css`
   background: #dddddd;
   width: 1px;
   height: 60%;
+`;
+
+export const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

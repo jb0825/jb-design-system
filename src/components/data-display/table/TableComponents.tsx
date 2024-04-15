@@ -12,6 +12,7 @@ import {
 } from "./TableStyle";
 import { SortDirection } from "@tanstack/react-table";
 import { SortIcon } from "./icons";
+import { Checkbox } from "@components/inputs/checkbox/Checkbox";
 
 interface TableProps {
   children?: React.ReactNode | JSX.Element;
@@ -75,4 +76,32 @@ export const TableBodyCell = ({ children }: TableProps) => {
 
 export const TableFootCell = ({ children }: TableProps) => {
   return <th css={TableFootCellCss}>{children}</th>;
+};
+
+/**
+ * Row Selection Checkbox
+ */
+export const IndeterminateCheckbox = ({
+  checked,
+  disabled,
+  indeterminate,
+  onChange,
+}: {
+  checked: boolean;
+  disabled?: boolean;
+  indeterminate: boolean;
+  onChange: (e: any) => void;
+}) => {
+  const onChangeHandler = (value: boolean) => {
+    onChange({ target: { checked: value } });
+  };
+
+  return (
+    <Checkbox
+      indeterminate={indeterminate}
+      checked={checked}
+      disabled={disabled}
+      onValueChange={onChangeHandler}
+    />
+  );
 };

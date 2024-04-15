@@ -87,7 +87,6 @@ export const Default = (args: TableProps) => {
 
 /**
  * Enable column sorting
- *
  */
 export const ColumnSorting = (args: TableProps) => {
   return (
@@ -100,6 +99,30 @@ export const ColumnSorting = (args: TableProps) => {
       <Table
         columns={columns.map((i) => ({ ...i, useSorting: true }))}
         data={data}
+      />
+    </div>
+  );
+};
+
+/**
+ * Enable row selection
+ */
+export const RowSelection = ({
+  enableRowSelection = true,
+  ...rest
+}: TableProps) => {
+  return (
+    <div
+      css={css`
+        width: 600px;
+        height: 400px;
+      `}
+    >
+      <Table
+        columns={columns.map((i) => ({ ...i, useSorting: true }))}
+        data={data}
+        enableRowSelection={enableRowSelection}
+        onRowSelectionChange={console.log}
       />
     </div>
   );
