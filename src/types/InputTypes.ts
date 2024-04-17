@@ -354,3 +354,33 @@ export interface TimePickerProps {
    */
   value: Date | string | null;
 }
+
+/**
+ * Switch component property
+ */
+export interface SwitchProps {
+  /**
+   * Switch 체크 여부
+   */
+  checked: boolean;
+  /**
+   * 이 옵션이 true 일 시, Switch 는 비활성화됨.
+   */
+  disabled: boolean;
+  /**
+   * 스위치 아이콘 이미지. offIcon 이 없는 경우 항상 스위치에 이 아이콘이 표출됨.
+   */
+  icon?: string;
+  /**
+   * 스위치 off 아이콘 이미지. switch 가 off 된 경우 (checked false 인 경우) 표출됨.
+   */
+  offIcon?: string;
+  /**
+   * Switch change 핸들러
+   */
+  onChange?: (isChecked: boolean) => void;
+  /**
+   * Switch 스타일 타입
+   */
+  type: "default" | "primary" | "icon";
+}

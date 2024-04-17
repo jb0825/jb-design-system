@@ -74,9 +74,9 @@ export const Button = ({
       css={css`
         ${ButtonCss}
         ${getButtonCss()}
-          ${disabled && "opacity: 0.5; cursor: default;"}
-          ${width && `width: ${width};`}
-          ${height && `height: ${height};`}
+        ${disabled && "opacity: 0.5; cursor: default;"}
+        ${width && `width: ${width};`}
+        ${height && `height: ${height};`}
       `}
       onClick={onClickHandler}
     >

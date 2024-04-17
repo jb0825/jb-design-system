@@ -27,8 +27,13 @@ export const useClickAnimation = (
     const { style } = element.current;
     const { offsetX, offsetY } = e;
     const sizeOffset = size / 2;
-    const top = isPositionFixed ? "0" : `${offsetY - sizeOffset}px`;
-    const left = isPositionFixed ? "0" : `${offsetX - sizeOffset}px`;
+    // animation position
+    const top = isPositionFixed
+      ? `calc(50% - ${sizeOffset})`
+      : `${offsetY - sizeOffset}px`;
+    const left = isPositionFixed
+      ? `calc(50% - ${sizeOffset})`
+      : `${offsetX - sizeOffset}px`;
 
     style.setProperty("--effect-duration", `${duration}ms`);
     style.setProperty("--effect-top", top);

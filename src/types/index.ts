@@ -12,5 +12,6 @@ export type {
   TextareaProps,
   InputProps,
   TimePickerProps,
+  SwitchProps,
 } from "./InputTypes";
 export type { AnimationConfig } from "./UtilTypes";
