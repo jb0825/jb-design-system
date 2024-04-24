@@ -17,14 +17,22 @@ export const InputCss = css`
   outline: none;
   border: 1px solid ${DEFAULT_COLOR};
   caret-color: ${PRIMARY_COLOR};
+  transition: box-shadow 0.15s;
   & + span {
     color: ${DEFAULT_COLOR};
   }
-  :focus {
-    border: 2px solid ${PRIMARY_COLOR};
+
+  :hover {
+    border: 1px solid ${PRIMARY_COLOR};
     & + span {
       color: ${PRIMARY_COLOR};
-      left: 9px;
+    }
+  }
+  :focus {
+    border: 1px solid ${PRIMARY_COLOR};
+    box-shadow: 0 0 3px 0 ${PRIMARY_COLOR};
+    & + span {
+      color: ${PRIMARY_COLOR};
     }
   }
   ::placeholder {

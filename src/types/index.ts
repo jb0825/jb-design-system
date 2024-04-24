@@ -14,4 +14,5 @@ export type {
   TimePickerProps,
   SwitchProps,
 } from "./InputTypes";
+export type { AccordionProps, AccordionItem } from "./SurfaceTypes";
 export type { AnimationConfig } from "./UtilTypes";

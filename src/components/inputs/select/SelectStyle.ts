@@ -20,6 +20,7 @@ export const SelectCss = css`
   width: 100%;
   max-height: 200px;
   overflow-y: auto;
+  background: #ffffff;
 
   &::-webkit-scrollbar {
     width: 8px;
