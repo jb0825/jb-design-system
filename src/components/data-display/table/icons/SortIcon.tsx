@@ -16,6 +16,8 @@ export const SortIcon = ({
     <span
       css={css`
         cursor: pointer;
+        flex-grow: 0;
+        flex-shrink: 0;
       `}
       onClick={onClick}
     >

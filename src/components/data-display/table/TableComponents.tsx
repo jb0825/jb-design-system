@@ -1,6 +1,7 @@
 import React from "react";
 import {
-  HeadCellChildCss,
+  HeadCell,
+  SortHeadCell,
   TableBodyCellCss,
   TableBodyCss,
   TableCss,
@@ -62,10 +63,14 @@ export const TableHeadCell = ({
 
   return (
     <th css={TableHeadCellCss} style={style}>
-      <div css={HeadCellChildCss}>
-        {children}
-        {isCanSort && <SortIcon sort={sortState} onClick={onHeadCellClick} />}
-      </div>
+      {isCanSort ? (
+        <SortHeadCell>
+          <div>{children}</div>
+          <SortIcon sort={sortState} onClick={onHeadCellClick} />
+        </SortHeadCell>
+      ) : (
+        <HeadCell>{children}</HeadCell>
+      )}
     </th>
   );
 };

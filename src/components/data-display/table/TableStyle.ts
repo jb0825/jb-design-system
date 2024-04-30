@@ -90,11 +90,19 @@ export const TableHeadCellCss = css`
   }
 `;
 
-export const HeadCellChildCss = css`
+export const HeadCell = styled.div`
   display: flex;
   gap: 6px;
   align-items: center;
   justify-content: center;
+`;
+export const SortHeadCell = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  & > div {
+    width: 100%;
+  }
 `;
 
 export const TableBodyCellCss = css`
