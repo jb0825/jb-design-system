@@ -5,10 +5,10 @@ import { cloneDeep } from "lodash-es";
 import { CheckboxGroupCss } from "./CheckboxStyle";
 
 export const CheckboxGroup = ({
-  disabled,
+  disabled = false,
   items,
   onValueChange,
-  value,
+  value = [],
 }: CheckboxGroupProps) => {
   const [inputValues, setInputValues] = useState<string[]>(value);
 
@@ -50,9 +50,4 @@ export const CheckboxGroup = ({
   }, [value]);
 
   return <div css={CheckboxGroupCss}>{checkboxItems}</div>;
-};
-
-CheckboxGroup.defaultProps = {
-  disabled: false,
-  value: [],
 };

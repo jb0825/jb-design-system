@@ -6,9 +6,9 @@ import { TimePickerCss } from "./TimePickerStyle";
 import "react-datepicker/dist/react-datepicker.css";
 
 export const TimePicker = ({
-  disabled,
-  required,
-  value,
+  disabled = false,
+  required = false,
+  value = null,
   label,
   onValueChange,
   placeholder,
@@ -80,10 +80,4 @@ export const TimePicker = ({
       />
     </div>
   );
-};
-
-TimePicker.defaultProps = {
-  disabled: false,
-  required: false,
-  value: null,
 };

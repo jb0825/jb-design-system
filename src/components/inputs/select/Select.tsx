@@ -11,12 +11,12 @@ import { Options, SelectProps } from "@types";
 import { arrow } from "@icons";
 
 export const Select = ({
-  disabled,
+  disabled = false,
   label,
-  options,
+  options = [],
   onValueChange,
-  readonly,
-  required,
+  readonly = false,
+  required = false,
   value,
 }: SelectProps) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -97,11 +97,4 @@ export const Select = ({
       </div>
     </div>
   );
-};
-
-Select.defaultProps = {
-  disabled: false,
-  readonly: false,
-  required: false,
-  options: [],
 };

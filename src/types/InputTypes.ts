@@ -6,8 +6,9 @@ import { HTMLInputAutoCompleteAttribute } from "react";
 export interface ButtonProps {
   /**
    * 이 옵션이 true 일 시, Button 은 비활성화 되며 클릭할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * 화면에 표출할 아이콘 이미지
    */
@@ -23,8 +24,9 @@ export interface ButtonProps {
   onClick: () => void;
   /**
    * Button 스타일 타입
+   * default: "default"
    */
-  type: "default" | "primary" | "icon";
+  type?: "default" | "primary" | "icon";
   /**
    * Button 사이즈 - 너비
    */
@@ -41,17 +43,20 @@ export interface ButtonProps {
 export interface CheckboxProps {
   /**
    * Checkbox 체크 여부
+   * default: false
    */
-  checked: boolean;
+  checked?: boolean;
   /**
    * 이 옵션이 true 일 시, Checkbox 는 비활성화 되며 클릭할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * 이 옴션이 true 일 시,
    * Checkbox 는 체크 또는 체크 해제된 상태가 아닌 중간 상태로 표출됨.
+   * default: false
    */
-  indeterminate: boolean;
+  indeterminate?: boolean;
   /**
    * Checkbox 라벨
    */
@@ -62,8 +67,9 @@ export interface CheckboxProps {
   onValueChange?: (checked: boolean) => void;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
 }
 
 /**
@@ -72,8 +78,9 @@ export interface CheckboxProps {
 export interface CheckboxGroupProps {
   /**
    * 이 옵션이 true 일 시, 모든 item 은 비활성화 되며 클릭할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * CheckboxGroup items
    */
@@ -84,8 +91,9 @@ export interface CheckboxGroupProps {
   onValueChange: (values: string[]) => void;
   /**
    * CheckboxGroup 값
+   * default: []
    */
-  value: string[];
+  value?: string[];
 }
 
 /**
@@ -94,16 +102,18 @@ export interface CheckboxGroupProps {
 export interface DatePickerProps {
   /**
    * 이 옵션이 true 일 시, DatePicker 는 비활성화 되며 값을 선택할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * DatePicker 라벨
    */
   label?: string;
   /**
    * DatePicker 달력에 표출될 언어 설정
+   * default: "ko"
    */
-  locale: "ko" | "en";
+  locale?: "ko" | "en";
   /**
    * DatePicker value change 핸들러
    */
@@ -114,12 +124,14 @@ export interface DatePickerProps {
   placeholder?: string;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
   /**
    * DatePicker 값
+   * default: null
    */
-  value: Date | string | null;
+  value?: Date | string | null;
 }
 
 /**
@@ -146,12 +158,14 @@ export interface GroupItems {
 export interface RadioProps {
   /**
    * Radio 체크 여부
+   * default: false
    */
-  checked: boolean;
+  checked?: boolean;
   /**
    * 이 옵션이 true 일 시, Radio 는 비활성화 되며 클릭할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Radio 라벨
    */
@@ -162,8 +176,9 @@ export interface RadioProps {
   onValueChange?: (checked: boolean) => void;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
 }
 
 /**
@@ -172,8 +187,9 @@ export interface RadioProps {
 export interface RadioGroupProps {
   /**
    * 이 옵션이 true 일 시, 모든 item 은 비활성화 되며 클릭할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * RadioGroup items
    */
@@ -184,8 +200,9 @@ export interface RadioGroupProps {
   onValueChange: (values: string) => void;
   /**
    * RadioGroup 값
+   * default: ""
    */
-  value: string;
+  value?: string;
 }
 
 export interface Options {
@@ -208,28 +225,32 @@ export interface Options {
 export interface SelectProps {
   /**
    * 이 옵션이 true 일 시, Select 는 비활성화 되며 값을 선택할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Select 라벨
    */
   label?: string;
   /**
    * Select options
+   * default: []
    */
-  options: Options[];
+  options?: Options[];
   /**
    * Select value change 핸들러
    */
   onValueChange: (value: string) => void;
   /**
    * 이 옵션이 true 일 시, Select 은 값을 선택할 수 없음.
+   * default: false
    */
-  readonly: boolean;
+  readonly?: boolean;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
   /**
    * Select 값
    */
@@ -242,8 +263,9 @@ export interface SelectProps {
 export interface TextareaProps {
   /**
    * 이 옵션이 true 일 시, Textarea 는 비활성화 되며 값을 입력할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Textarea 라벨
    */
@@ -254,12 +276,14 @@ export interface TextareaProps {
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
    * 이 옵션이 true 일 시, Textarea 은 값을 입력할 수 없음.
+   * default: false
    */
-  readonly: boolean;
+  readonly?: boolean;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
   /**
    * Textarea emotion CSS or Style object
    */
@@ -285,12 +309,14 @@ export interface InputProps {
   /**
    * Input 기본값.
    * value property 를 입력하지 않으면 해당 값이 Input 의 값이 됨.
+   * default: ""
    */
-  defaultValue: string | number | undefined;
+  defaultValue?: string | number | undefined;
   /**
    * 이 옵션이 true 일 시, Input 은 비활성화 되며 값을 입력할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Input 라벨
    */
@@ -305,12 +331,14 @@ export interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   /**
    * 이 옵션이 true 일 시, Input 은 값을 입력할 수 없음.
+   * default: false
    */
-  readonly: boolean;
+  readonly?: boolean;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
   /**
    * Input placeholder
    */
@@ -331,8 +359,9 @@ export interface InputProps {
 export interface TimePickerProps {
   /**
    * 이 옵션이 true 일 시, TimePicker 는 비활성화 되며 값을 선택할 수 없음.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * TimePicker 라벨
    */
@@ -347,12 +376,14 @@ export interface TimePickerProps {
   placeholder?: string;
   /**
    * 이 옵션이 true 일 시, 필수값 아이콘이 표시됨.
+   * default: false
    */
-  required: boolean;
+  required?: boolean;
   /**
    * TimePicker 값
+   * default: null
    */
-  value: Date | string | null;
+  value?: Date | string | null;
 }
 
 /**
@@ -361,12 +392,14 @@ export interface TimePickerProps {
 export interface SwitchProps {
   /**
    * Switch 체크 여부
+   * default: false
    */
-  checked: boolean;
+  checked?: boolean;
   /**
    * 이 옵션이 true 일 시, Switch 는 비활성화됨.
+   * default: false
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * 스위치 아이콘 이미지. offIcon 이 없는 경우 항상 스위치에 이 아이콘이 표출됨.
    */
@@ -381,6 +414,7 @@ export interface SwitchProps {
   onChange?: (isChecked: boolean) => void;
   /**
    * Switch 스타일 타입
+   * default: "default"
    */
-  type: "default" | "primary" | "icon";
+  type?: "default" | "primary" | "icon";
 }

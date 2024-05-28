@@ -12,11 +12,11 @@ import { ClickAnimation } from "@components/utils";
 import { PRIMARY_COLOR } from "@constants/defines";
 
 export const Radio = ({
-  checked,
-  disabled,
+  checked = false,
+  disabled = false,
   label,
   onValueChange,
-  required,
+  required = false,
 }: RadioProps) => {
   const [inputChecked, setInputChecked] = useState(checked);
 
@@ -67,10 +67,4 @@ export const Radio = ({
       </span>
     </div>
   );
-};
-
-Radio.defaultProps = {
-  checked: false,
-  disabled: false,
-  required: false,
 };

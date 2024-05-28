@@ -4,10 +4,10 @@ import { RadioGroupCss } from "./RadioStyle";
 import { Radio } from "./Radio";
 
 export const RadioGroup = ({
-  disabled,
+  disabled = false,
   items,
   onValueChange,
-  value,
+  value = "",
 }: RadioGroupProps) => {
   const [inputValue, setInputValue] = useState<string>(value);
 
@@ -36,9 +36,4 @@ export const RadioGroup = ({
   }, [value]);
 
   return <div css={RadioGroupCss}>{radioItems}</div>;
-};
-
-RadioGroup.defaultProps = {
-  disabled: false,
-  value: "",
 };

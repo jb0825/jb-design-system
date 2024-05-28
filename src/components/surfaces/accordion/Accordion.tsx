@@ -23,5 +23,3 @@ export const Accordion = (props: AccordionProps) => {
     </div>
   );
 };
-
-Accordion.defaultProps = {};

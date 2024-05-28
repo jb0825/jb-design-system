@@ -17,12 +17,12 @@ import {
 } from "./SwitchStyle";
 
 export const Switch = ({
-  checked,
-  disabled,
+  checked = false,
+  disabled = false,
   icon,
   offIcon,
   onChange,
-  type,
+  type = "default",
 }: SwitchProps) => {
   const [switchOn, setSwitchOn] = useState(checked);
 
@@ -103,10 +103,4 @@ export const Switch = ({
       </span>
     </div>
   );
-};
-
-Switch.defaultProps = {
-  checked: false,
-  disabled: false,
-  type: "default",
 };

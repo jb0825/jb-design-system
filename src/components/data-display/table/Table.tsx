@@ -24,8 +24,8 @@ import { Resizer } from "./Resizer";
 export const Table = ({
   columns,
   data,
-  enableFooter,
-  enableRowSelection,
+  enableFooter = false,
+  enableRowSelection = false,
   onRowSelectionChange,
 }: TableProps) => {
   const [tableData, setTableData] = useState<Object[]>(data);
@@ -152,9 +152,4 @@ export const Table = ({
       </TableMain>
     </div>
   );
-};
-
-Table.defaultProps = {
-  enableFooter: false,
-  enableRowSelection: false,
 };

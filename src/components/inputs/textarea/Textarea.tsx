@@ -9,9 +9,9 @@ import {
 import { css } from "@emotion/react";
 
 export const Textarea = ({
-  disabled,
-  readonly,
-  required,
+  disabled = false,
+  readonly = false,
+  required = false,
   label,
   onChange,
   placeholder,
@@ -55,10 +55,4 @@ export const Textarea = ({
       </span>
     </div>
   );
-};
-
-Textarea.defaultProps = {
-  disabled: false,
-  readonly: false,
-  required: false,
 };

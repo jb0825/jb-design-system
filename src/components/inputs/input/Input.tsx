@@ -10,13 +10,13 @@ import { css } from "@emotion/react";
 
 export const Input = ({
   autoComplete,
-  defaultValue,
-  disabled,
+  defaultValue = "",
+  disabled = false,
   label,
   onBlur,
   onChange,
-  readonly,
-  required,
+  readonly = false,
+  required = false,
   placeholder,
   type,
   value,
@@ -60,11 +60,4 @@ export const Input = ({
       </span>
     </div>
   );
-};
-
-Input.defaultProps = {
-  defaultValue: "",
-  disabled: false,
-  readonly: false,
-  required: false,
 };

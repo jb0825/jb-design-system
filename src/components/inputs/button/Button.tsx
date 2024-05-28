@@ -12,11 +12,11 @@ import { PRIMARY_COLOR } from "@constants/defines";
 import { ClickAnimation } from "@components/utils";
 
 export const Button = ({
-  disabled,
+  disabled = false,
   icon,
   label,
   onClick,
-  type,
+  type = "default",
   width,
   height,
 }: ButtonProps) => {
@@ -86,9 +86,4 @@ export const Button = ({
       {!disabled && <ClickAnimation {...getClickAnimationConfig()} />}
     </div>
   );
-};
-
-Button.defaultProps = {
-  disabled: false,
-  type: "default",
 };

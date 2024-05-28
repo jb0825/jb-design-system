@@ -7,13 +7,13 @@ import { DatePickerCss } from "./DatePickerStyle";
 import "react-datepicker/dist/react-datepicker.css";
 
 export const DatePicker = ({
-  disabled,
+  disabled = false,
   label,
-  locale,
+  locale = "ko",
   onValueChange,
   placeholder,
-  required,
-  value,
+  required = false,
+  value = null,
 }: DatePickerProps) => {
   const [date, setDate] = useState<Date | null>(null);
 
@@ -72,11 +72,4 @@ export const DatePicker = ({
       />
     </div>
   );
-};
-
-DatePicker.defaultProps = {
-  disabled: false,
-  required: false,
-  locale: "ko",
-  value: null,
 };

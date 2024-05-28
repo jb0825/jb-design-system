@@ -14,12 +14,12 @@ import {
 import { css } from "@emotion/react";
 
 export const Checkbox = ({
-  checked,
-  disabled,
-  indeterminate,
+  checked = false,
+  disabled = false,
+  indeterminate = false,
   label,
   onValueChange,
-  required,
+  required = false,
 }: CheckboxProps) => {
   const [inputChecked, setInputChecked] = useState(checked);
 
@@ -82,11 +82,4 @@ export const Checkbox = ({
       </span>
     </div>
   );
-};
-
-Checkbox.defaultProps = {
-  checked: false,
-  disabled: false,
-  indeterminate: false,
-  required: false,
 };
