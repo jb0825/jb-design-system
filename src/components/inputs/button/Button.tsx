@@ -16,6 +16,7 @@ export const Button = ({
   icon,
   label,
   onClick,
+  style,
   type = "default",
   width,
   height,
@@ -77,6 +78,7 @@ export const Button = ({
         ${disabled && "opacity: 0.5; cursor: default;"}
         ${width && `width: ${width};`}
         ${height && `height: ${height};`}
+        ${style && { ...style }}
       `}
       onClick={onClickHandler}
     >

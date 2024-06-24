@@ -23,6 +23,10 @@ export interface ButtonProps {
    */
   onClick: () => void;
   /**
+   * Button emotion CSS or Style object
+   */
+  style?: React.CSSProperties;
+  /**
    * Button 스타일 타입
    * default: "default"
    */
@@ -213,7 +217,7 @@ export interface Options {
   /**
    * Option 값
    */
-  value: string;
+  value: string | number;
   /**
    * 이 옵션이 true 일 시, Option 은 선택할 수 없음
    */
@@ -240,7 +244,7 @@ export interface SelectProps {
   /**
    * Select value change 핸들러
    */
-  onValueChange: (value: string) => void;
+  onValueChange: (value: string | number) => void;
   /**
    * 이 옵션이 true 일 시, Select 은 값을 선택할 수 없음.
    * default: false
@@ -254,7 +258,7 @@ export interface SelectProps {
   /**
    * Select 값
    */
-  value?: string;
+  value?: string | number;
 }
 
 /**
