@@ -7,8 +7,8 @@ export const RadioBoxCss = css`
 `;
 
 export const RadioCss = css`
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
