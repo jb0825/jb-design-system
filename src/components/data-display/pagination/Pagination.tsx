@@ -6,6 +6,13 @@ import { range } from "lodash-es";
 import React, { useEffect, useMemo, useState } from "react";
 import { PaginationButton } from "./PaginationButton";
 import { Button } from "@components/inputs/button/Button";
+import {
+  NumberButtonsCss,
+  PaginationButtonsCss,
+  PaginationCss,
+  SelectBoxCss,
+  imgRotateStyle,
+} from "./PaginationStyle";
 
 // 페이징 버튼 개수
 const PAGE_BUTTON_COUNT = 5;
@@ -97,13 +104,7 @@ export const Pagination = ({
 
   const pageButtons = useMemo(
     () => (
-      <div
-        css={css`
-          display: flex;
-          gap: 5px;
-          margin: 0 10px;
-        `}
-      >
+      <div css={NumberButtonsCss}>
         {range(pageBtn.start, pageBtn.end + 1).map((i) => (
           <PaginationButton
             active={page === i}
@@ -131,18 +132,13 @@ export const Pagination = ({
   return (
     <div
       css={css`
-        display: flex;
-        width: 100%;
+        ${PaginationCss}
         justify-content: ${disableRowsPerPage ? "center" : "space-between"};
       `}
     >
       {/** Page size select */}
       {!disableRowsPerPage && (
-        <div
-          css={css`
-            width: 100px;
-          `}
-        >
+        <div css={SelectBoxCss}>
           <Select
             options={rowsPerPage}
             onValueChange={onPageSizeChange}
@@ -152,22 +148,7 @@ export const Pagination = ({
       )}
 
       {/** Page number buttons */}
-      <div
-        css={css`
-          display: flex;
-          align-items: center;
-          margin: 0 10px;
-          & > img {
-            width: 36px;
-            height: 36px;
-            cursor: pointer;
-            border-radius: 50%;
-            &:hover {
-              background-color: #f1f1f1;
-            }
-          }
-        `}
-      >
+      <div css={PaginationButtonsCss}>
         <Button
           type="icon"
           icon={arrow_dbl}
@@ -185,14 +166,14 @@ export const Pagination = ({
           type="icon"
           icon={arrow}
           onClick={onNextClickHandler}
-          style={{ rotate: "180deg" }}
+          style={imgRotateStyle}
           disabled={page === totalPages}
         />
         <Button
           type="icon"
           icon={arrow_dbl}
           onClick={onLastClickHandler}
-          style={{ rotate: "180deg" }}
+          style={imgRotateStyle}
           disabled={page === totalPages}
         />
       </div>
