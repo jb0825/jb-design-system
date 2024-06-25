@@ -1,4 +1,9 @@
-export type { Columns, PaginationProps, TableProps } from "./DataDisplayTypes";
+export type {
+  Columns,
+  Pagination,
+  PaginationProps,
+  TableProps,
+} from "./DataDisplayTypes";
 export type {
   ButtonProps,
   CheckboxProps,

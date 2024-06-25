@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { arrow, arrow_dbl } from "./icons";
 import { Options, PaginationProps } from "@types";
 import { range } from "lodash-es";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { PaginationButton } from "./PaginationButton";
 import { Button } from "@components/inputs/button/Button";
 
@@ -11,7 +11,13 @@ import { Button } from "@components/inputs/button/Button";
 const PAGE_BUTTON_COUNT = 5;
 
 export const Pagination = ({
-  pagination,
+  onPageChange,
+  pagination = {
+    page: 1,
+    pageSize: 10,
+    totalPages: 10,
+    totalRows: 100,
+  },
   disableRowsPerPage = false,
   rowsPerPage: rowsPerPageArray = [10, 50, 100, 150, 200],
 }: PaginationProps) => {
@@ -19,20 +25,24 @@ export const Pagination = ({
     rowsPerPageArray.map((i) => ({ label: `${i}`, value: i }))
   );
 
-  /**
-   * Rows per page
-   */
-  const [page, setPage] = useState(pagination.page || 1);
-  const [pageSize, setPageSize] = useState(pagination.pageSize || 10);
-  const [totalRows, setTotalRows] = useState(pagination.totalRows || 100);
-  const [totalPages, setTotalPages] = useState(pagination.totalPages || 10);
+  const [page, setPage] = useState(pagination.page);
+  const [pageSize, setPageSize] = useState(pagination.pageSize);
+  const [totalPages, setTotalPages] = useState(pagination.totalPages);
+  const [totalRows, setTotalRows] = useState(pagination.totalRows);
 
   /**
    * Pagination number buttons control
    */
-  const [pageBtn, setPageBtn] = useState({ start: 1, end: PAGE_BUTTON_COUNT });
+  const [pageBtn, setPageBtn] = useState({
+    start: 1,
+    end: Math.min(PAGE_BUTTON_COUNT, totalPages),
+  });
 
-  const resetPageBtn = () => setPageBtn({ start: 1, end: PAGE_BUTTON_COUNT });
+  /**
+   * Reset pagination number buttons
+   */
+  const resetPageBtn = (end = totalPages) =>
+    setPageBtn({ start: 1, end: Math.min(PAGE_BUTTON_COUNT, end) });
 
   /**
    * 이전 페이지 < 버튼 Click handler
@@ -77,13 +87,16 @@ export const Pagination = ({
    * PageSize change handler
    */
   const onPageSizeChange = (value: string | number) => {
-    setPageSize(Number(value));
+    const pageSize = Number(value);
+    const totalPages = Math.floor(totalRows / pageSize);
+    setPageSize(pageSize);
+    setTotalPages(totalPages);
     setPage(1);
-    resetPageBtn();
+    resetPageBtn(totalPages);
   };
 
-  const getPageButtons = () => {
-    return (
+  const pageButtons = useMemo(
+    () => (
       <div
         css={css`
           display: flex;
@@ -100,14 +113,27 @@ export const Pagination = ({
           />
         ))}
       </div>
-    );
-  };
+    ),
+    [pageBtn.start, pageBtn.end, page]
+  );
+
+  useEffect(() => {
+    if (!onPageChange) return;
+
+    onPageChange({
+      page,
+      pageSize,
+      totalPages,
+      totalRows,
+    });
+  }, [page, pageSize]);
 
   return (
     <div
       css={css`
         display: flex;
         width: 100%;
+        justify-content: ${disableRowsPerPage ? "center" : "space-between"};
       `}
     >
       {/** Page size select */}
@@ -154,7 +180,7 @@ export const Pagination = ({
           onClick={onPrevClickHandler}
           disabled={page === 1}
         />
-        {getPageButtons()}
+        {pageButtons}
         <Button
           type="icon"
           icon={arrow}

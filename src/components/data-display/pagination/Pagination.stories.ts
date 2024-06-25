@@ -22,8 +22,9 @@ export const Default: Story = {
     pagination: {
       page: 1,
       pageSize: 10,
-      totalPages: 10,
-      totalRows: 100,
+      totalPages: 100,
+      totalRows: 1000,
     },
+    onPageChange: console.log,
   },
 };
