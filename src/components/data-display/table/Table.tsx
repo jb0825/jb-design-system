@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   SortingState,
   flexRender,
@@ -28,12 +28,16 @@ export const Table = ({
   enableRowSelection = false,
   onRowSelectionChange,
 }: TableProps) => {
+  // Table scrollbar 컨트롤하기 위한 Ref
+  const tableRef = useRef<HTMLDivElement>(null);
+
+  // Table data
   const [tableData, setTableData] = useState<Object[]>(data);
 
   // Column sorting
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
-  // Row Selection
+  // Row selection
   const [rowSelection, setRowSelection] = React.useState<
     Record<string, boolean>
   >({});
@@ -87,6 +91,9 @@ export const Table = ({
 
   useEffect(() => {
     setTableData(data);
+
+    // 테이블 데이터 변경 시 스크롤바 초기화
+    tableRef.current && tableRef.current.scrollTo({ top: 0 });
   }, [data]);
 
   useEffect(() => {
@@ -94,7 +101,7 @@ export const Table = ({
   }, [rowSelection]);
 
   return (
-    <div css={TableBoxCss}>
+    <div css={TableBoxCss} ref={tableRef}>
       <TableMain style={{ width: table.getCenterTotalSize() }}>
         <TableHead>
           {table.getHeaderGroups().map((headerGroup) => (

@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Table } from "./Table";
-import { Columns, TableProps } from "@types";
+import { Columns, Pagination as PaginationType, TableProps } from "@types";
 import { css } from "@emotion/react";
+import { Pagination } from "../pagination/Pagination";
+import { useState } from "react";
 
 const meta = {
   title: "Design System/Data Display/Table",
@@ -60,17 +62,19 @@ const columns: Columns[] = [
 ];
 
 const random = () => Math.floor(Math.random() * 100);
-const data = range(20).map(() => {
-  return {
-    "1": random(),
-    "2": random(),
-    "3": random(),
-    "4": random(),
-    "5": random(),
-    "6": random(),
-    "7": random(),
-  };
-});
+const makeData = (size: number) =>
+  range(size).map(() => {
+    return {
+      "1": random(),
+      "2": random(),
+      "3": random(),
+      "4": random(),
+      "5": random(),
+      "6": random(),
+      "7": random(),
+    };
+  });
+const data = makeData(20);
 
 export const Default = (args: TableProps) => {
   return (
@@ -124,6 +128,66 @@ export const RowSelection = ({
         enableRowSelection={enableRowSelection}
         onRowSelectionChange={console.log}
       />
+    </div>
+  );
+};
+
+/**
+ * Table Pagination (Client-Side)
+ *
+ * Server-Side Pagination 구현하려면 onPageChange 함수에 서버에서 조회하는 로직을 넣으면 됨.
+ */
+export const TablePagination = () => {
+  const data = range(10000).map((i) => {
+    return {
+      "1": i,
+      "2": i,
+      "3": i,
+      "4": i,
+      "5": i,
+      "6": i,
+      "7": i,
+    };
+  });
+
+  const [pageData, setPageData] = useState(data.slice(1, 10));
+  const [pageInfo, setPageInfo] = useState<PaginationType>({
+    page: 1,
+    pageSize: 10,
+    totalPages: 10000 / 10,
+    totalRows: 10000,
+  });
+
+  const onPageChange = ({
+    page,
+    pageSize,
+    totalPages,
+    totalRows,
+  }: PaginationType) => {
+    const start = pageSize * (page - 1) + 1;
+    const end = start + pageSize - 1;
+
+    setPageData(data.slice(start, end));
+    setPageInfo({
+      page,
+      pageSize,
+      totalPages,
+      totalRows,
+    });
+  };
+
+  return (
+    <div
+      css={css`
+        width: 600px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      `}
+    >
+      <Table columns={columns} data={pageData} />
+      <Pagination pagination={pageInfo} onPageChange={onPageChange} />
     </div>
   );
 };
