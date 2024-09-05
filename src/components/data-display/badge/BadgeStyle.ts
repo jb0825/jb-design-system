@@ -22,4 +22,5 @@ export const BadgeCss = css`
   align-items: center;
   justify-content: center;
   cursor: default;
+  transition: transform 0.1s;
 `;

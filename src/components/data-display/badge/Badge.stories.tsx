@@ -41,13 +41,13 @@ export const Default = () => {
     >
       {/* 문자열 배지 */}
       <div>
-        {isVisible && <Badge value="New"></Badge>}
+        <Badge value="New" isVisible={isVisible}></Badge>
         <Button label="Click here" onClick={() => toggleVisible(!isVisible)} />
       </div>
 
       {/* 내용 없는 배지 */}
       <div>
-        {isVisible2 && <Badge></Badge>}
+        <Badge isVisible={isVisible2} />
         <Button
           label="Click here"
           onClick={() => toggleVisible2(!isVisible2)}

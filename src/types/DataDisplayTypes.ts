@@ -1,5 +1,6 @@
 export interface BadgeProps {
   children?: React.ReactNode | JSX.Element;
+  isVisible?: boolean;
   max?: number;
   value?: string | number;
 }
