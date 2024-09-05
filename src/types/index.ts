@@ -1,4 +1,5 @@
 export type {
+  BadgeProps,
   Columns,
   Pagination,
   PaginationProps,

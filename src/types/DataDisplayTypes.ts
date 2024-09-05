@@ -1,3 +1,9 @@
+export interface BadgeProps {
+  children?: React.ReactNode | JSX.Element;
+  max?: number;
+  value?: string | number;
+}
+
 export interface Columns {
   accessorKey: string;
   header: string;
