@@ -5,6 +5,7 @@ export type {
   PaginationProps,
   TableProps,
 } from "./DataDisplayTypes";
+export type { AlertProps } from "./FeedbackTypes";
 export type {
   ButtonProps,
   CheckboxProps,
