@@ -5,9 +5,10 @@ import { css } from "@emotion/react";
 
 interface useAlertProps {
   width?: number /** pixel */;
+  duration?: number;
 }
 
-export const useAlert = ({ width = 350 }: useAlertProps = {}) => {
+export const useAlert = ({ width = 350, duration = 0 }: useAlertProps = {}) => {
   const [children, setChildren] = useState<JSX.Element[]>([]);
   const [alert, setAlert] = useState<JSX.Element[]>([]);
 
@@ -116,6 +117,19 @@ export const useAlert = ({ width = 350 }: useAlertProps = {}) => {
   }: AlertProps) => {
     if (!divRef.current) return;
     const key = Math.random() + "";
+    let timer: NodeJS.Timeout;
+
+    /**
+     * Alert 닫기
+     */
+    const onCloseHandler = () => {
+      if (onClose) onClose();
+      setAlert((prev) => prev.filter((i) => i.key !== key));
+      if (duration) clearTimeout(timer);
+    };
+
+    // Alert 닫기 타이머
+    if (duration) timer = setTimeout(onCloseHandler, duration);
 
     setAlert((prev) => [
       ...prev,
@@ -125,13 +139,7 @@ export const useAlert = ({ width = 350 }: useAlertProps = {}) => {
         title={title}
         description={description}
         disableCloseBtn={disableCloseBtn}
-        onClose={() => {
-          if (onClose) onClose();
-          /**
-           * Alert 닫기
-           */
-          setAlert((prev) => prev.filter((i) => i.key !== key));
-        }}
+        onClose={onCloseHandler}
       />,
     ]);
   };

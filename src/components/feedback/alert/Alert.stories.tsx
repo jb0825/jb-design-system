@@ -77,7 +77,7 @@ export const AlertTypes = () => {
 };
 
 export const UsingHooks = () => {
-  const { contextHolder, api } = useAlert();
+  const { contextHolder, api } = useAlert({ duration: 3000 });
 
   return (
     <div>
