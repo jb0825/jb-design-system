@@ -136,3 +136,81 @@ export const UsingHooks = () => {
     </div>
   );
 };
+
+export const AlertPosition = () => {
+  const { contextHolder: topLeftContext, api: topLeftApi } = useAlert({
+    position: "topLeft",
+  });
+  const { contextHolder: topRightContext, api: topRightApi } = useAlert({
+    position: "topRight",
+  });
+
+  const { contextHolder: bottomLeftContext, api: bottomLeftApi } = useAlert({
+    position: "bottomLeft",
+  });
+
+  const { contextHolder: bottomRightContext, api: bottomRightApi } = useAlert({
+    position: "bottomRight",
+  });
+
+  return (
+    <div>
+      {topLeftContext}
+      {topRightContext}
+      {bottomLeftContext}
+      {bottomRightContext}
+
+      <div
+        css={css`
+          display: flex;
+          gap: 10px;
+        `}
+      >
+        <Button
+          label="topLeft"
+          onClick={() =>
+            topLeftApi.open({
+              title: "TopLeft",
+              description: "Position topLeft",
+              disableCloseBtn: false,
+              type: "info",
+            })
+          }
+        />
+        <Button
+          label="topRight"
+          onClick={() =>
+            topRightApi.open({
+              title: "TopRight",
+              description: "Position topRight",
+              disableCloseBtn: false,
+              type: "info",
+            })
+          }
+        />
+        <Button
+          label="bottomLeft"
+          onClick={() =>
+            bottomLeftApi.open({
+              title: "bottomLeft",
+              description: "Position bottomLeft",
+              disableCloseBtn: false,
+              type: "info",
+            })
+          }
+        />
+        <Button
+          label="bottomRight"
+          onClick={() =>
+            bottomRightApi.open({
+              title: "bottomRight",
+              description: "Position bottomRight",
+              disableCloseBtn: false,
+              type: "info",
+            })
+          }
+        />
+      </div>
+    </div>
+  );
+};
