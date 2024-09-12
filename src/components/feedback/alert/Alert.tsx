@@ -20,40 +20,19 @@ export const Alert = ({
   onClose,
 }: AlertProps) => {
   /**
-   * Alert 타입별 CSS 를 반환
+   * Alert 타입별 CSS 및 icon
    */
-  const getAlertCss = () => {
-    switch (type) {
-      case "success":
-        return SuccessAlertCss;
-      case "info":
-        return InfoAlertCss;
-      case "warning":
-        return WarnAlertCss;
-      case "error":
-        return ErrorAlertCss;
-    }
+  const alertCss = {
+    success: { css: SuccessAlertCss, icon: success },
+    info: { css: InfoAlertCss, icon: info },
+    warning: { css: WarnAlertCss, icon: warning },
+    error: { css: ErrorAlertCss, icon: error },
   };
-
-  /**
-   * Alert 타입별 아이콘 반환
-   */
-  const getAlertIcon = () => {
-    switch (type) {
-      case "success":
-        return success;
-      case "info":
-        return info;
-      case "warning":
-        return warning;
-      case "error":
-        return error;
-    }
-  };
+  const { css, icon } = alertCss[type];
 
   return (
-    <div css={getAlertCss()}>
-      <img src={getAlertIcon()} />
+    <div css={css}>
+      <img src={icon} />
       <div css={ContentCss}>
         {title && <div css={TitleCss}>{title}</div>}
         <div css={DescriptionCss}>{description}</div>
