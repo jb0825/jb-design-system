@@ -76,7 +76,7 @@ export const Example = (args: CheckboxGroupProps) => {
       <CheckboxGroup
         {...args}
         items={items}
-        value={values}
+        values={values}
         onValueChange={setValues}
       />
     </div>

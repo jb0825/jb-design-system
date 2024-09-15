@@ -97,7 +97,7 @@ export interface CheckboxGroupProps {
    * CheckboxGroup 값
    * default: []
    */
-  value?: string[];
+  values?: string[];
 }
 
 /**

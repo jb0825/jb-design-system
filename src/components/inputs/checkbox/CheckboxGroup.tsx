@@ -8,9 +8,9 @@ export const CheckboxGroup = ({
   disabled = false,
   items,
   onValueChange,
-  value = [],
+  values,
 }: CheckboxGroupProps) => {
-  const [inputValues, setInputValues] = useState<string[]>(value);
+  const [inputValues, setInputValues] = useState<string[]>(values || []);
 
   /**
    * CheckboxGroup value change handler
@@ -46,8 +46,8 @@ export const CheckboxGroup = ({
   }, [inputValues]);
 
   useEffect(() => {
-    setInputValues(value);
-  }, [value]);
+    setInputValues(values || []);
+  }, [values]);
 
   return <div css={CheckboxGroupCss}>{checkboxItems}</div>;
 };
