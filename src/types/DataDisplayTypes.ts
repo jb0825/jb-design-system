@@ -1,3 +1,6 @@
+/**
+ * Badge component properties
+ */
 export interface BadgeProps {
   children?: React.ReactNode | JSX.Element;
   isVisible?: boolean;
@@ -5,29 +8,62 @@ export interface BadgeProps {
   value?: string | number;
 }
 
+/**
+ * Table 컴포넌트 column 옵션 타입
+ */
 export interface Columns {
+  /**
+   * 컬럼 키값
+   */
   accessorKey: string;
+  /**
+   * 컬럼에 표출될 텍스트
+   */
   header: string;
+  /**
+   * 테이블에 footer 를 사용하는 경우, footer 텍스트
+   */
   footer?: string;
+  /**
+   * 컬럼 커스텀 셀
+   */
   cell?: any;
+  /**
+   * 컬럼 사이즈 - 너비
+   */
   size?: number;
+  /**
+   * 정렬 사용 여부
+   * default: false
+   */
   useSorting?: boolean;
 }
 
 /**
- * 페이지 정보
- * page: 현재 페이지
- * pageSize: 한 페이지당 보여줄 행의 개수
- * totalRows: 전체 행 개수
- * totalPages: 전체 페이지 개수
+ * Pagination 컴포넌트 pagenation 옵션 타입
  */
 export interface Pagination {
+  /**
+   * 현재 페이지
+   */
   page: number;
+  /**
+   * 한 페이지당 보여줄 행의 개수
+   */
   pageSize: number;
+  /**
+   * 전체 행 개수
+   */
   totalRows: number;
+  /**
+   * 전체 페이지 개수
+   */
   totalPages: number;
 }
 
+/**
+ * Pagination component properties
+ */
 export interface PaginationProps {
   /**
    * 페이지 change event handler
@@ -49,6 +85,9 @@ export interface PaginationProps {
   rowsPerPage?: number[];
 }
 
+/**
+ * Table component properties
+ */
 export interface TableProps {
   columns: Columns[];
   data: Object[];

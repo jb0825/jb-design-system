@@ -26,6 +26,9 @@ export interface AlertProps {
   type?: "success" | "info" | "warning" | "error";
 }
 
+/**
+ * Modal component properties
+ */
 export interface ModalProps {
   /**
    * Modal 하단 footer 부분에 들어갈 커스텀 버튼.
