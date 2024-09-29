@@ -81,19 +81,7 @@ export const VerticalBoxCss = css`
   box-sizing: border-box;
 
   &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background: #eaeaea;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #eaeaea;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #bebebe;
-    border-radius: 10px;
+    display: none;
   }
   &,
   ul {

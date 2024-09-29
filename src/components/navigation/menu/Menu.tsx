@@ -5,10 +5,14 @@ import { HorizontalMenu } from "./HorizontalMenu";
 
 export const Menu = React.memo(
   ({ direction = "vertical", items }: MenuProps) => {
-    return direction == "vertical" ? (
-      <VerticalMenu items={items} />
-    ) : (
-      <HorizontalMenu items={items} />
+    return (
+      <nav style={{ width: "100%", height: "100%" }}>
+        {direction == "vertical" ? (
+          <VerticalMenu items={items} />
+        ) : (
+          <HorizontalMenu items={items} />
+        )}
+      </nav>
     );
   }
 );
