@@ -6,6 +6,7 @@ export const MaskIcon = styled.div<{ icon?: string; selected: boolean }>`
   width: 20px;
   height: 20px;
   mask: url(${({ icon }) => icon}) no-repeat;
+  mask-size: cover;
   background-color: ${({ selected }) => (selected ? "#1976d2" : "#7e7e7e")};
 `;
 
