@@ -21,6 +21,7 @@ export type {
   TimePickerProps,
   SwitchProps,
 } from "./InputTypes";
+export type { LayoutProps } from "./LayoutTypes";
 export type { MenuItem, MenuProps } from "./NavigationTypes";
 export type { AccordionProps, AccordionItem } from "./SurfaceTypes";
 export type { AnimationConfig } from "./UtilTypes";
