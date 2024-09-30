@@ -4,7 +4,9 @@ import { Content, Footer, Header, Layout, Sider } from "./Layout";
 import { css } from "@emotion/react";
 import { Menu } from "@components/navigation/menu/Menu";
 import { MenuItem } from "@types";
-import { search } from "@icons";
+import { home, search } from "@icons";
+import { Breadcrumb } from "@components/navigation/breadcrumb/Breadcrumb";
+import { BreadcrumbItem } from "src/types/NavigationTypes";
 
 const meta = {
   title: "Design System/Layout/Layout",
@@ -144,6 +146,12 @@ export const Example = () => {
     },
   ];
 
+  const breadcrumb: BreadcrumbItem[] = [
+    { icon: home },
+    { icon: search, title: "Application List" },
+    { title: "Application" },
+  ];
+
   return (
     <div
       css={css`
@@ -176,9 +184,17 @@ export const Example = () => {
           />
           <Menu items={menu} direction="horizontal" />
         </Header>
+        <div
+          css={css`
+            margin: 2rem 3rem 1.5rem 3rem;
+          `}
+        >
+          <Breadcrumb items={breadcrumb} />
+        </div>
         <Layout
           style={{
             margin: "3rem",
+            marginTop: 0,
             borderRadius: 8,
             width: "calc(100% - 6rem)",
           }}
