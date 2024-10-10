@@ -2,10 +2,58 @@
  * Badge component properties
  */
 export interface BadgeProps {
+  /**
+   * Children element
+   */
   children?: React.ReactNode | JSX.Element;
+  /**
+   * 배지 표출 여부
+   * default: true
+   */
   isVisible?: boolean;
+  /**
+   * 배지에 표출할 값이 숫자인 경우, 숫자의 최대 값
+   * e.g. 999
+   */
   max?: number;
+  /**
+   * 배지에 표출할 값. 해당 옵션이 비어있는 경우 값 없이 빨간 아이콘만 표출됨
+   */
   value?: string | number;
+}
+
+/**
+ * Carousel component properties
+ */
+export interface CarouselProps {
+  /**
+   * 슬라이드 자동 재생 여부
+   * default: true
+   */
+  autoplay?: boolean;
+  /**
+   * 슬라이드할 children 엘리먼트 배열
+   */
+  children: React.ReactNode[];
+  /**
+   * autoplay 가 true 인 경우, 자동 재생 간격 (ms 단위)
+   * default: 3000
+   */
+  duration?: number;
+  /**
+   * 화살표 버튼 표출 여부
+   * default: true
+   */
+  showArrow?: boolean;
+  /**
+   * 하단 인덱스 버튼 표출 여부
+   * default: true
+   */
+  showBar?: boolean;
+  /**
+   * 인덱스 change handler
+   */
+  onIndexChange?: (index: number) => void;
 }
 
 /**

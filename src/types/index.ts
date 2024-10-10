@@ -1,5 +1,6 @@
 export type {
   BadgeProps,
+  CarouselProps,
   Columns,
   Pagination,
   PaginationProps,
