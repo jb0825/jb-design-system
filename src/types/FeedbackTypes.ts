@@ -80,3 +80,31 @@ export interface ModalProps {
    */
   width?: number;
 }
+
+/**
+ * Skeleton component properties
+ */
+export interface SkeletonProps {
+  /**
+   * Skeleton 사이즈 - 너비
+   */
+  width?: string;
+  /**
+   * Skeleton 사이즈 - 높이
+   * default: 20px
+   */
+  height?: string;
+  /**
+   * Loading 애니메이션 활성화 여부
+   * default: true
+   */
+  enableAnimation?: boolean;
+  /**
+   * Skeleton 안에 표출할 아이콘 이미지
+   */
+  icon?: string;
+  /**
+   * Skeleton CSS style object
+   */
+  style?: React.CSSProperties;
+}
