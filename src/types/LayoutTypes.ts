@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 /**
  * Layout component properties
  */
@@ -11,5 +9,5 @@ export interface LayoutProps {
   /**
    * Layout CSS style object
    */
-  style?: CSSProperties;
+  style?: React.CSSProperties;
 }
