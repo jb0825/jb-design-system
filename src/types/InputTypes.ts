@@ -23,7 +23,7 @@ export interface ButtonProps {
    */
   onClick: () => void;
   /**
-   * Button emotion CSS or Style object
+   * Button CSS Style object
    */
   style?: React.CSSProperties;
   /**
@@ -289,7 +289,7 @@ export interface TextareaProps {
    */
   required?: boolean;
   /**
-   * Textarea emotion CSS or Style object
+   * Textarea CSS Style object
    */
   style?: React.CSSProperties;
   /**

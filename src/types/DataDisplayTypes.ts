@@ -47,7 +47,7 @@ export interface CardProps {
    */
   title?: React.ReactNode | string;
   /**
-   * Custom card styles
+   * Card CSS style object
    */
   style?: React.CSSProperties;
   /**
