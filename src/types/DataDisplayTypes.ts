@@ -23,6 +23,44 @@ export interface BadgeProps {
 }
 
 /**
+ * Card component properties
+ */
+export interface CardProps {
+  /**
+   * Card 커버 이미지
+   */
+  cover?: string;
+  /**
+   * Card 커버 이미지 사이즈 - 높이
+   */
+  coverHeight?: string;
+  /**
+   * 커버 이미지 click handler
+   */
+  onCoverClick?: () => void;
+  /**
+   * Card content (element or Text)
+   */
+  content?: React.ReactNode | string;
+  /**
+   * Card title (element or Text)
+   */
+  title?: React.ReactNode | string;
+  /**
+   * Custom card styles
+   */
+  style?: React.CSSProperties;
+  /**
+   * Card 사이즈 - 너비
+   */
+  width?: string;
+  /**
+   * Card 사이즈 - 높이
+   */
+  height?: string;
+}
+
+/**
  * Carousel component properties
  */
 export interface CarouselProps {
