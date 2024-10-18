@@ -6,6 +6,8 @@ export type {
   Pagination,
   PaginationProps,
   TableProps,
+  TreeItem,
+  TreeProps,
 } from "./DataDisplayTypes";
 export type { AlertProps, ModalProps, SkeletonProps } from "./FeedbackTypes";
 export type {

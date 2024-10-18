@@ -192,3 +192,58 @@ export interface TableProps {
    */
   onRowSelectionChange?: (rowSelection: Record<string, boolean>) => void;
 }
+
+/**
+ * Tree 컴포넌트 items 옵션 타입
+ */
+export interface TreeItem {
+  /**
+   * 아이템 라벨
+   */
+  title: string;
+  /**
+   * 아이템 고유 키값
+   */
+  key: string;
+  /**
+   * 이 옵션이 true 일 시, 해당 아이템은 비활성화되며 클릭할 수 없음.
+   * default: false
+   */
+  disabled?: boolean;
+  /**
+   * 하위 서브트리를 가지고 있는 아이템의 경우,
+   * TreeItem 타입으로 children 전달
+   */
+  children?: TreeItem[];
+}
+
+/**
+ * Tree component properties
+ */
+export interface TreeProps {
+  /**
+   * 트리 아이템 (내용)
+   */
+  items: TreeItem[];
+  /**
+   * 트리 확장/축소 커스텀 아이콘 설정
+   */
+  icons?: {
+    /**
+     * 축소 아이콘 이미지
+     */
+    collapse: string;
+    /**
+     * 확장 아이콘 이미지
+     */
+    expand: string;
+  };
+  /**
+   * 트리 아이템 클릭 이벤트 핸들러
+   */
+  onItemClick?: (key: string) => void;
+  /**
+   * 트리 사이즈 - 너비
+   */
+  width?: string;
+}
