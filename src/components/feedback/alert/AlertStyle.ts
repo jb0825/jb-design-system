@@ -15,7 +15,6 @@ const AlertCss = css`
   position: relative;
   padding: 16px;
   border-radius: 6px;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   display: flex;
   align-items: flex-start;
@@ -34,37 +33,28 @@ const AlertCss = css`
   }
 `;
 
-const SUCCESS_COLOR = "#245327";
-const SUCCESS_BACKGROUND = "#edf7ed";
-const INFO_COLOR = "#286281";
-const INFO_BACKGROUND = "#e5f6fd";
-const WARNING_COLOR = "#8d4a12";
-const WARNING_BACKGROUND = "#fff4e5";
-const ERROR_COLOR = "#832929";
-const ERROR_BACKGROUND = "#fdeded";
-
 export const SuccessAlertCss = css`
   ${AlertCss}
-  color: ${SUCCESS_COLOR};
-  background: ${SUCCESS_BACKGROUND};
+  color: var(--success-color);
+  background: var(--success-color-light);
 `;
 
 export const InfoAlertCss = css`
   ${AlertCss}
-  color: ${INFO_COLOR};
-  background: ${INFO_BACKGROUND};
+  color: var(--info-color);
+  background: var(--info-color-light);
 `;
 
 export const WarnAlertCss = css`
   ${AlertCss}
-  color: ${WARNING_COLOR};
-  background: ${WARNING_BACKGROUND};
+  color: var(--warning-color);
+  background: var(--warning-color-light);
 `;
 
 export const ErrorAlertCss = css`
   ${AlertCss}
-  color: ${ERROR_COLOR};
-  background: ${ERROR_BACKGROUND};
+  color: var(--error-color);
+  background: var(--error-color-light);
 `;
 
 export const ContentCss = css`

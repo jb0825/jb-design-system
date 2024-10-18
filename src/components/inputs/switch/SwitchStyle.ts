@@ -1,4 +1,3 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -17,7 +16,7 @@ export const SwitchBar = styled.div`
 `;
 
 export const SwitchPrimaryBarCss = css`
-  background-color: ${PRIMARY_COLOR}66;
+  background-color: var(--primary-color-20);
 `;
 
 export const SwitchButtonBoxCss = css`
@@ -37,7 +36,7 @@ export const SwitchButtonBoxCss = css`
 
 export const SwitchPrimaryButtonBoxCss = css`
   :hover {
-    background-color: ${PRIMARY_COLOR}1A;
+    background-color: var(--primary-color-10);
   }
 `;
 export const SwitchIconButtonBoxCss = css`
@@ -58,7 +57,7 @@ export const SwitchButtonCss = css`
 `;
 
 export const SwitchPrimtyButtonCss = css`
-  background-color: ${PRIMARY_COLOR};
+  background-color: var(--primary-color);
 `;
 export const SwitchIconButtonCss = css`
   width: 30px;

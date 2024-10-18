@@ -73,7 +73,8 @@ export const TableRowCss = css`
 
 export const TableHeadCellCss = css`
   position: relative;
-  font: 500 14px "Noto Sans KR";
+  font-weight: 500;
+  font-size: 14px;
   height: 36px;
   padding: 2px 8px;
   box-sizing: border-box;
@@ -107,7 +108,8 @@ export const SortHeadCell = styled.div`
 
 export const TableBodyCellCss = css`
   position: relative;
-  font: 400 14px "Noto Sans KR";
+  font-weight: 400;
+  font-size: 14px;
   color: #0f0f0f;
   padding: 2px 10px;
   border-bottom: 1px solid #f3f3f3;
@@ -120,7 +122,8 @@ export const TableBodyCellCss = css`
 
 export const TableFootCellCss = css`
   position: relative;
-  font: 500 14px "Noto Sans KR";
+  font-weight: 500;
+  font-size: 14px;
   border-bottom: none;
   border-top: 1px solid #dddddd;
 `;

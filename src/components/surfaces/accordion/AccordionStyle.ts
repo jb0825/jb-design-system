@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const AccordionBoxCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   display: flex;
   flex-direction: column;

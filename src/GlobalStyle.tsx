@@ -4,6 +4,36 @@ export default () => {
   return (
     <Global
       styles={css`
+        * {
+          font-family: "Noto Sans KR", sans-serif;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        :root {
+          --primary-color: #1976d2;
+          --default-color: #6b6b6b;
+
+          /** 투명도 적용된 컬러 **/
+          --primary-color-10: #1976d21a;
+          --primary-color-15: #1976d226;
+          --primary-color-20: #1976d266;
+
+          --success-color: #245327;
+          --info-color: #286281;
+          --warning-color: #8d4a12;
+          --error-color: #832929;
+
+          --success-color-light: #edf7ed;
+          --info-color-light: #e5f6fd;
+          --warning-color-light: #fff4e5;
+          --error-color-light: #fdeded;
+        }
+
         /** ClickAnimation Styles **/
         .effect-container {
           position: relative;

@@ -8,7 +8,6 @@ display: flex;
   flex-direction: column;
   border: 1px solid #dddddd;
   border-radius: 8px;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   overflow: hidden;
   transition: box-shadow 0.2s;

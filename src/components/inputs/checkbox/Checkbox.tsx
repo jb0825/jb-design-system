@@ -1,5 +1,4 @@
 import { ClickAnimation } from "@components/utils";
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
 import { CheckboxProps } from "@types";
 import React, { useEffect, useState } from "react";
 import {
@@ -43,7 +42,7 @@ export const Checkbox = ({
         {/** Checkbox Click Animation */}
         <ClickAnimation
           size={42}
-          color={PRIMARY_COLOR}
+          color={"var(--primary-color)"}
           isPositionFixed={true}
           duration={400}
           disabled={disabled}
@@ -62,7 +61,7 @@ export const Checkbox = ({
                 css={css`
                   ${CheckboxIndeterminateBoxCss}
                   ${disabled &&
-                  `opacity: 0.3; span {background: ${DEFAULT_COLOR};}`}
+                  `opacity: 0.3; span {background: var(--default-color);}`}
                 `}
               >
                 <span css={CheckboxIndeterminateCss} />

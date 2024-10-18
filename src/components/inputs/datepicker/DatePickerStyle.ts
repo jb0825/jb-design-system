@@ -1,13 +1,9 @@
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 /**
  * react-datepicker CSS 재정의
  */
 export const DatePickerCss = css`
-  .react-datepicker {
-    font-family: "Noto Sans KR", sans-serif;
-  }
   .react-datepicker__header {
     padding: 12px 0;
     background-color: #ffffff;
@@ -28,7 +24,7 @@ export const DatePickerCss = css`
     border-radius: 50%;
   }
   .react-datepicker__day--selected {
-    background-color: ${PRIMARY_COLOR};
+    background-color: var(--primary-color);
   }
   .react-datepicker__day--today {
     background-color: #f1f1f1;

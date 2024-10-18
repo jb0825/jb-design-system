@@ -38,7 +38,6 @@ export const ModalCss = css`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   animation: ${open} 0.25s;
 `;

@@ -9,7 +9,6 @@ import {
   RadioLabelCss,
 } from "./RadioStyle";
 import { ClickAnimation } from "@components/utils";
-import { PRIMARY_COLOR } from "@constants/defines";
 
 export const Radio = ({
   checked = false,
@@ -40,7 +39,7 @@ export const Radio = ({
         {/** Radio Click Animation */}
         <ClickAnimation
           size={42}
-          color={PRIMARY_COLOR}
+          color={"var(--primary-color)"}
           isPositionFixed={true}
           duration={400}
           disabled={disabled}

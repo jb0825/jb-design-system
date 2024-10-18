@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 export const BreadcrumbBoxCss = css`
   display: flex;
   gap: 10px;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   color: #939393;
   align-items: center;

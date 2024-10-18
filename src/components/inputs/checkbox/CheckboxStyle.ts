@@ -1,4 +1,3 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 export const CheckboxBoxCss = css`
@@ -42,7 +41,7 @@ export const CheckboxIndeterminateBoxCss = css`
   margin-left: 1px;
 `;
 export const CheckboxIndeterminateCss = css`
-  background: ${PRIMARY_COLOR};
+  background: var(--primary-color);
   width: 10px;
   height: 10px;
   display: block;
@@ -50,7 +49,6 @@ export const CheckboxIndeterminateCss = css`
 `;
 
 export const CheckboxLabelCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   margin-bottom: 2px;
   margin-left: -1px;

@@ -8,7 +8,6 @@ export const LeafDiv = styled.div<{
 }>`
   display: flex;
   align-items: center;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   height: 28px;
   cursor: pointer;

@@ -8,7 +8,6 @@ import {
   ButtonPrimaryCss,
 } from "./ButtonStyle";
 import { css } from "@emotion/react";
-import { PRIMARY_COLOR } from "@constants/defines";
 import { ClickAnimation } from "@components/utils";
 
 export const Button = ({
@@ -53,7 +52,7 @@ export const Button = ({
 
     switch (type) {
       case "default":
-        config.color = PRIMARY_COLOR;
+        config.color = "var(--primary-color)";
         config.size = 200;
         break;
       case "primary":

@@ -1,4 +1,3 @@
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 /** Input Styles */
@@ -7,7 +6,6 @@ export const InputBoxCss = css`
 `;
 
 export const InputCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   padding: 0 12px;
   font-size: 14px;
   box-sizing: border-box;
@@ -15,24 +13,24 @@ export const InputCss = css`
   height: 36px;
   border-radius: 6px;
   outline: none;
-  border: 1px solid ${DEFAULT_COLOR};
-  caret-color: ${PRIMARY_COLOR};
+  border: 1px solid var(--default-color);
+  caret-color: var(--primary-color);
   transition: box-shadow 0.15s;
   & + span {
-    color: ${DEFAULT_COLOR};
+    color: var(--default-color);
   }
 
   :hover {
-    border: 1px solid ${PRIMARY_COLOR};
+    border: 1px solid var(--primary-color);
     & + span {
-      color: ${PRIMARY_COLOR};
+      color: var(--primary-color);
     }
   }
   :focus {
-    border: 1px solid ${PRIMARY_COLOR};
-    box-shadow: 0 0 3px 0 ${PRIMARY_COLOR};
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 3px 0 var(--primary-color);
     & + span {
-      color: ${PRIMARY_COLOR};
+      color: var(--primary-color);
     }
   }
   ::placeholder {

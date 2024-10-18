@@ -1,4 +1,3 @@
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 export const TextareaBoxCss = css`
@@ -6,7 +5,6 @@ export const TextareaBoxCss = css`
 `;
 
 export const TextareaCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   box-sizing: border-box;
   width: 100%;
@@ -14,8 +12,8 @@ export const TextareaCss = css`
   border-radius: 6px;
   outline: none;
   padding: 7px 12px;
-  border: 1px solid ${DEFAULT_COLOR};
-  caret-color: ${PRIMARY_COLOR};
+  border: 1px solid var(--default-color);
+  caret-color: var(--primary-color);
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -33,12 +31,12 @@ export const TextareaCss = css`
     border-radius: 10px;
   }
   & + span {
-    color: ${DEFAULT_COLOR};
+    color: var(--default-color);
   }
   :focus {
-    border: 2px solid ${PRIMARY_COLOR};
+    border: 2px solid var(--primary-color);
     & + span {
-      color: ${PRIMARY_COLOR};
+      color: var(--primary-color);
       left: 9px;
     }
   }

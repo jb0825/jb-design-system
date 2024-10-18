@@ -29,7 +29,6 @@ export const RadioInputCss = css`
 `;
 
 export const RadioLabelCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   margin-bottom: 2px;
   margin-left: -1px;

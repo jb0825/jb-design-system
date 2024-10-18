@@ -1,4 +1,3 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 export const SelectBoxCss = css`
@@ -6,14 +5,10 @@ export const SelectBoxCss = css`
 `;
 
 export const SelectCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
-  list-style-type: none;
   position: absolute;
   top: 5px;
   left: 0;
-  padding: 0;
-  margin: 0;
   border: 1px solid #aeaeae;
   border-radius: 6px;
   box-sizing: border-box;
@@ -46,7 +41,7 @@ export const SelectCss = css`
     cursor: pointer;
   }
   li:hover {
-    background-color: ${PRIMARY_COLOR}26;
+    background-color: var(--primary-color-15);
   }
   li[aria-disabled="true"] {
     cursor: not-allowed;
@@ -54,7 +49,7 @@ export const SelectCss = css`
     background-color: #f1f1f1;
   }
   li[aria-selected="true"] {
-    background-color: ${PRIMARY_COLOR};
+    background-color: var(--primary-color);
     color: #ffffff;
   }
 `;

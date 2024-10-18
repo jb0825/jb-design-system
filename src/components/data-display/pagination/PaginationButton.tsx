@@ -1,4 +1,3 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 import React from "react";
 import { NumberButtonCss } from "./PaginationStyle";
@@ -19,8 +18,8 @@ export const PaginationButton = ({
         ${NumberButtonCss}
         ${active &&
         `
-          background-color: ${PRIMARY_COLOR}26;
-          color: ${PRIMARY_COLOR};
+          background-color: var(--primary-color-15);
+          color: var(--primary-color);
           `}
       `}
       onClick={() => onButtonClick(page)}

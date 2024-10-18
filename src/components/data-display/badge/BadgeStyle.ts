@@ -15,7 +15,6 @@ export const BadgeCss = css`
   box-sizing: border-box;
   background-color: #da3f27;
   border-radius: 50px;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 8px;
   color: #fff;
   display: flex;

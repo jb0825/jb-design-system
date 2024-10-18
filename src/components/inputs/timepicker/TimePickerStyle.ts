@@ -1,10 +1,6 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 export const TimePickerCss = css`
-  .react-datepicker {
-    font-family: "Noto Sans KR", sans-serif;
-  }
   .react-datepicker__header {
     padding: 12px 0;
     background-color: #ffffff;
@@ -28,7 +24,7 @@ export const TimePickerCss = css`
     .react-datepicker__time-box
     ul.react-datepicker__time-list
     li.react-datepicker__time-list-item--selected {
-    background-color: ${PRIMARY_COLOR};
+    background-color: var(--primary-color);
   }
   .react-datepicker__time-container
     .react-datepicker__time

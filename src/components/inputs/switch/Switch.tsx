@@ -1,5 +1,4 @@
 import { ClickAnimation } from "@components/utils";
-import { DEFAULT_COLOR, PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 import { SwitchProps } from "@types";
 import React, { useState } from "react";
@@ -86,7 +85,9 @@ export const Switch = ({
           size={40}
           duration={300}
           isPositionFixed={true}
-          color={type === "primary" ? PRIMARY_COLOR : DEFAULT_COLOR}
+          color={
+            type === "primary" ? "var(--primary-color)" : "var(--default-color)"
+          }
           disabled={disabled}
         >
           <span

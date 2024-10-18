@@ -14,7 +14,6 @@ export const HorizontalBoxCss = css`
   width: 100%;
   height: 100%;
   display: flex;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
 
   & > div {
@@ -25,11 +24,6 @@ export const HorizontalBoxCss = css`
         max-height: 1000px;
       }
     }
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 `;
 
@@ -83,12 +77,6 @@ export const VerticalBoxCss = css`
 
   &::-webkit-scrollbar {
     display: none;
-  }
-  &,
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 `;
 

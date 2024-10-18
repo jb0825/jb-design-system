@@ -1,9 +1,7 @@
-import { PRIMARY_COLOR } from "@constants/defines";
 import { css } from "@emotion/react";
 
 /** Button Styles  */
 export const ButtonCss = css`
-  font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: 14px;
   display: flex;
@@ -13,7 +11,7 @@ export const ButtonCss = css`
   box-sizing: border-box;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1px solid ${PRIMARY_COLOR};
+  border: 1px solid var(--primary-color);
   cursor: pointer;
   user-select: none;
   position: relative;
@@ -22,12 +20,12 @@ export const ButtonCss = css`
 `;
 
 export const ButtonDefaultCss = css`
-  color: ${PRIMARY_COLOR};
+  color: var(--primary-color);
 `;
 
 export const ButtonPrimaryCss = css`
   color: #ffffff;
-  background: ${PRIMARY_COLOR};
+  background: var(--primary-color);
 `;
 
 export const ButtonIconCss = css`
