@@ -1,3 +1,5 @@
+import { Item } from "./CommonTypes";
+
 /**
  * Badge component properties
  */
@@ -196,15 +198,11 @@ export interface TableProps {
 /**
  * Tree 컴포넌트 items 옵션 타입
  */
-export interface TreeItem {
+export interface TreeItem extends Item {
   /**
    * 아이템 라벨
    */
   title: string;
-  /**
-   * 아이템 고유 키값
-   */
-  key: string;
   /**
    * 이 옵션이 true 일 시, 해당 아이템은 비활성화되며 클릭할 수 없음.
    * default: false

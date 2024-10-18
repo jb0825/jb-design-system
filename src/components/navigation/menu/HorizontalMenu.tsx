@@ -7,7 +7,7 @@ import {
   MaskIcon,
 } from "./MenuStyle";
 import { Submenu } from "./Submenu";
-import { useMenu } from "./hooks/useMenu";
+import { useTree } from "@hooks";
 
 export const HorizontalMenu = React.memo(({ items }: MenuProps) => {
   const {
@@ -18,7 +18,7 @@ export const HorizontalMenu = React.memo(({ items }: MenuProps) => {
     parents,
     clearParents,
     setAllParents,
-  } = useMenu({ items });
+  } = useTree({ items });
 
   return (
     <div css={HorizontalBoxCss}>

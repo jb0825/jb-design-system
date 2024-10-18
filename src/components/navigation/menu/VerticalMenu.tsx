@@ -4,7 +4,7 @@ import React from "react";
 import { Item } from "./Item";
 import { Submenu } from "./Submenu";
 import { VerticalBoxCss, VerticalMenuCss } from "./MenuStyle";
-import { useMenu } from "./hooks/useMenu";
+import { useTree } from "@hooks";
 
 export const VerticalMenu = React.memo(({ items }: MenuProps) => {
   const {
@@ -15,7 +15,7 @@ export const VerticalMenu = React.memo(({ items }: MenuProps) => {
     parents,
     clearParents,
     setAllParents,
-  } = useMenu({ items });
+  } = useTree({ items });
 
   return (
     <ul css={VerticalBoxCss}>

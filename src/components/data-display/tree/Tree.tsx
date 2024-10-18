@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
 import { TreeProps } from "@types";
 import React from "react";
-import { useMenu } from "@components/navigation/menu/hooks/useMenu";
+import { useTree } from "@hooks";
 import { Leaf } from "./Leaf";
 
 export const Tree = React.memo(
   ({ items, icons, onItemClick, width }: TreeProps) => {
-    const { selected, setSelected, expanded, toggleExpand } = useMenu({
+    const { selected, setSelected, expanded, toggleExpand } = useTree({
       items,
     });
 

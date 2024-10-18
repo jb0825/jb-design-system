@@ -1,3 +1,5 @@
+import { Item } from "./CommonTypes";
+
 /**
  * Breadcrumb 컴포넌트 items 옵션 타입
  */
@@ -39,11 +41,7 @@ export interface BreadcrumbProps {
 /**
  * Menu 컴포넌트 items 옵션 타입
  */
-export interface MenuItem {
-  /**
-   * 아이템 키값
-   */
-  key: string;
+export interface MenuItem extends Item {
   /**
    * 아이콘 이미지
    */
