@@ -10,7 +10,12 @@ export type {
   TreeItem,
   TreeProps,
 } from "./DataDisplayTypes";
-export type { AlertProps, ModalProps, SkeletonProps } from "./FeedbackTypes";
+export type {
+  AlertProps,
+  ModalProps,
+  ProgressProps,
+  SkeletonProps,
+} from "./FeedbackTypes";
 export type {
   ButtonProps,
   CheckboxProps,
