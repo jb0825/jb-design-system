@@ -1,16 +1,7 @@
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const color = "rgba(0, 0, 0, 0.06)";
-
-const loading = keyframes`
-0% {
-  transform: translateX(-100%);
-}
-100% {
-  transform: translateX(100%);
-}
-`;
 
 export const MaskIcon = styled.div<{ icon?: string }>`
   width: 60%;
@@ -42,5 +33,5 @@ export const SkeletonLoadingCss = css`
     rgba(0, 0, 0, 0.04),
     rgba(0, 0, 0, 0.001)
   );
-  animation: ${loading} 1.4s ease infinite;
+  animation: translateX 1.4s ease infinite;
 `;

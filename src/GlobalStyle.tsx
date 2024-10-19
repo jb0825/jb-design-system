@@ -18,15 +18,22 @@ export default () => {
           --primary-color: #1976d2;
           --default-color: #6b6b6b;
 
+          --default-color-light: #dddddd;
+
           /** 투명도 적용된 컬러 **/
           --primary-color-10: #1976d21a;
           --primary-color-15: #1976d226;
           --primary-color-20: #1976d266;
 
-          --success-color: #245327;
-          --info-color: #286281;
-          --warning-color: #8d4a12;
-          --error-color: #832929;
+          --success-color: #52c41a;
+          --info-color: #1677ff;
+          --warning-color: #faad14;
+          --error-color: #ff4d4f;
+
+          --success-color-dark: #245327;
+          --info-color-dark: #286281;
+          --warning-color-dark: #8d4a12;
+          --error-color-dark: #832929;
 
           --success-color-light: #edf7ed;
           --info-color-light: #e5f6fd;
@@ -68,6 +75,9 @@ export default () => {
           animation: ripple var(--effect-duration) linear forwards;
         }
 
+        /** Animations **/
+
+        // ClickAnimation
         @keyframes ripple {
           from {
             transform: scale(0);
@@ -76,6 +86,16 @@ export default () => {
           to {
             transform: scale(1);
             opacity: 0;
+          }
+        }
+
+        // Progress & Skeleton
+        @keyframes translateX {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
           }
         }
       `}

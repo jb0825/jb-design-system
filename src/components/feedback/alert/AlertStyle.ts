@@ -35,25 +35,25 @@ const AlertCss = css`
 
 export const SuccessAlertCss = css`
   ${AlertCss}
-  color: var(--success-color);
+  color: var(--success-color-dark);
   background: var(--success-color-light);
 `;
 
 export const InfoAlertCss = css`
   ${AlertCss}
-  color: var(--info-color);
+  color: var(--info-color-dark);
   background: var(--info-color-light);
 `;
 
 export const WarnAlertCss = css`
   ${AlertCss}
-  color: var(--warning-color);
+  color: var(--warning-color-dark);
   background: var(--warning-color-light);
 `;
 
 export const ErrorAlertCss = css`
   ${AlertCss}
-  color: var(--error-color);
+  color: var(--error-color-dark);
   background: var(--error-color-light);
 `;
 
