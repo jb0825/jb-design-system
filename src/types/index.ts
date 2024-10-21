@@ -4,7 +4,7 @@ export type {
   CardProps,
   CarouselProps,
   Columns,
-  Pagination,
+  Paginations,
   PaginationProps,
   TableProps,
   TreeItem,

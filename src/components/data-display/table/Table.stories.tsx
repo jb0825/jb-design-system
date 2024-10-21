@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Table } from "./Table";
-import { Columns, Pagination as PaginationType, TableProps } from "@types";
+import { Columns, Paginations, TableProps } from "@types";
 import { css } from "@emotion/react";
 import { Pagination } from "../pagination/Pagination";
 import { useState } from "react";
@@ -151,7 +151,7 @@ export const TablePagination = () => {
   });
 
   const [pageData, setPageData] = useState(data.slice(1, 10));
-  const [pageInfo, setPageInfo] = useState<PaginationType>({
+  const [pageInfo, setPageInfo] = useState<Paginations>({
     page: 1,
     pageSize: 10,
     totalPages: 10000 / 10,
@@ -163,7 +163,7 @@ export const TablePagination = () => {
     pageSize,
     totalPages,
     totalRows,
-  }: PaginationType) => {
+  }: Paginations) => {
     const start = pageSize * (page - 1) + 1;
     const end = start + pageSize - 1;
 

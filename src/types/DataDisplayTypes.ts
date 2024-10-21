@@ -130,7 +130,7 @@ export interface Columns {
 /**
  * Pagination 컴포넌트 pagenation 옵션 타입
  */
-export interface Pagination {
+export interface Paginations {
   /**
    * 현재 페이지
    */
@@ -156,11 +156,11 @@ export interface PaginationProps {
   /**
    * 페이지 change event handler
    */
-  onPageChange?: (pagination: Pagination) => void;
+  onPageChange?: (pagination: Paginations) => void;
   /**
    * 페이지 정보
    */
-  pagination: Pagination;
+  pagination: Paginations;
   /**
    * 이 옵션이 true 일 시, 한 페이지당 보여줄 행의 개수를 선택할 수 있는 콤보박스가 표출되지 않음.
    * default: false
