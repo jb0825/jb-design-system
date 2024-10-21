@@ -13,7 +13,7 @@ import {
 } from "./TableStyle";
 import { SortDirection } from "@tanstack/react-table";
 import { SortIcon } from "./icons";
-import { Checkbox } from "@components/inputs/checkbox/Checkbox";
+import { Checkbox } from "@components/inputs";
 
 interface TableProps {
   children?: React.ReactNode | JSX.Element;

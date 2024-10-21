@@ -3,8 +3,8 @@ import React from "react";
 import { Alert } from "./Alert";
 import { css } from "@emotion/react";
 import { useAlert } from "./useAlert";
-import { Button } from "@components/inputs/button/Button";
 import { AlertProps } from "@types";
+import { Button } from "@components/inputs";
 
 const meta = {
   title: "Design System/Feedback/Alert",

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Table } from "./Table";
 import { Columns, Paginations, TableProps } from "@types";
 import { css } from "@emotion/react";
-import { Pagination } from "../pagination/Pagination";
 import { useState } from "react";
+import { Pagination } from "@components/data-display";
 
 const meta = {
   title: "Design System/Data Display/Table",

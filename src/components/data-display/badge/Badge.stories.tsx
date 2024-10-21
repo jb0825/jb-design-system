@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "./Badge";
-import { Button } from "@components/inputs/button/Button";
 import { css } from "@emotion/react";
 import { useState } from "react";
+import { Button } from "@components/inputs";
 
 const meta = {
   title: "Design System/Data Display/Badge",

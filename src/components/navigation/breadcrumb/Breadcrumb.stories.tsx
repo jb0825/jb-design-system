@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumb } from "./Breadcrumb";
-import { BreadcrumbItem } from "src/types/NavigationTypes";
 import { home, search } from "@icons";
+import { BreadcrumbItem } from "@types";
 
 const meta = {
   title: "Design System/Navigation/Breadcrumb",

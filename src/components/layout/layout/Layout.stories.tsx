@@ -2,11 +2,9 @@ import type { Meta } from "@storybook/react";
 import React, { CSSProperties } from "react";
 import { Content, Footer, Header, Layout, Sider } from "./Layout";
 import { css } from "@emotion/react";
-import { Menu } from "@components/navigation/menu/Menu";
-import { MenuItem } from "@types";
+import { BreadcrumbItem, MenuItem } from "@types";
 import { home, search } from "@icons";
-import { Breadcrumb } from "@components/navigation/breadcrumb/Breadcrumb";
-import { BreadcrumbItem } from "src/types/NavigationTypes";
+import { Breadcrumb, Menu } from "@components/navigation";
 
 const meta = {
   title: "Design System/Layout/Layout",

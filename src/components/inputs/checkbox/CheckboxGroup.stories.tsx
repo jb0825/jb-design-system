@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CheckboxGroup } from "./CheckboxGroup";
 import { CheckboxGroupProps, GroupItems } from "@types";
 import { css } from "@emotion/react";
-import { Button } from "../button/Button";
 import { useState } from "react";
-import { Checkbox } from "./Checkbox";
+import { Button, Checkbox, CheckboxGroup } from "@components/inputs";
 
 const meta = {
   title: "Design System/Inputs/CheckboxGroup",

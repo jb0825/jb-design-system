@@ -1,11 +1,9 @@
-import { Select } from "@components/inputs/select/Select";
 import { css } from "@emotion/react";
 import { arrow, arrow_dbl } from "./icons";
 import { Options, PaginationProps } from "@types";
 import { range } from "lodash-es";
 import React, { useEffect, useMemo, useState } from "react";
 import { PaginationButton } from "./PaginationButton";
-import { Button } from "@components/inputs/button/Button";
 import {
   NumberButtonsCss,
   PaginationButtonsCss,
@@ -13,6 +11,7 @@ import {
   SelectBoxCss,
   imgRotateStyle,
 } from "./PaginationStyle";
+import { Button, Select } from "@components/inputs";
 
 // 페이징 버튼 개수
 const PAGE_BUTTON_COUNT = 5;

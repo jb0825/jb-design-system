@@ -1,4 +1,3 @@
-import { Button } from "@components/inputs/button/Button";
 import { css } from "@emotion/react";
 import { close, error, info, success, warning } from "@icons";
 import { ModalProps } from "@types";
@@ -12,6 +11,7 @@ import {
   ModalFooterCss,
   ModalHeaderCss,
 } from "./ModalStyle";
+import { Button } from "@components/inputs";
 
 export const Modal = ({
   buttons,

@@ -32,6 +32,11 @@ export type {
   SwitchProps,
 } from "./InputTypes";
 export type { LayoutProps } from "./LayoutTypes";
-export type { BreadcrumbProps, MenuItem, MenuProps } from "./NavigationTypes";
+export type {
+  BreadcrumbProps,
+  BreadcrumbItem,
+  MenuItem,
+  MenuProps,
+} from "./NavigationTypes";
 export type { AccordionProps, AccordionItem } from "./SurfaceTypes";
 export type { AnimationConfig } from "./UtilTypes";
