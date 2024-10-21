@@ -57,6 +57,7 @@ export const HorizontalSubmenuBoxCss = css`
   left: 0;
   padding: 10px 0;
   width: 100%;
+  z-index: 1;
 
   & > div {
     width: 100%;

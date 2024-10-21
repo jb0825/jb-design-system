@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import { BreadcrumbItem, MenuItem } from "@types";
 import { home, search } from "@icons";
 import { Breadcrumb, Menu } from "@components/navigation";
+import { Skeleton } from "@components/feedback";
 
 const meta = {
   title: "Design System/Layout/Layout",
@@ -150,6 +151,12 @@ export const Example = () => {
     { title: "Application" },
   ];
 
+  const rounded = {
+    width: "50px",
+    height: "50px",
+    style: { borderRadius: "50%" },
+  };
+
   return (
     <div
       css={css`
@@ -195,13 +202,40 @@ export const Example = () => {
             marginTop: 0,
             borderRadius: 8,
             width: "calc(100% - 6rem)",
+            border: "1px solid #e8e8e8",
           }}
         >
           <Sider style={{ width: "25%", borderRight: "1px solid #e8e8e8" }}>
             <Menu items={menu.map((i) => ({ ...i, icon: search }))} />
           </Sider>
-          <Content style={{ backgroundColor: "#fff", padding: "1rem" }}>
-            Content
+          <Content
+            style={{
+              backgroundColor: "#fff",
+              padding: "2rem",
+              display: "flex",
+              gap: "20px",
+            }}
+          >
+            <div
+              css={css`
+                flex-shrink: 0;
+              `}
+            >
+              <Skeleton {...rounded} />
+            </div>
+            <div
+              css={css`
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+              `}
+            >
+              <Skeleton width={"60%"} />
+              <Skeleton width={"80%"} />
+              <Skeleton width={"40%"} />
+              <Skeleton width={"100%"} />
+            </div>
           </Content>
         </Layout>
         <Footer
