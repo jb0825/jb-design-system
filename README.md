@@ -2,6 +2,8 @@
 
 React, typescript, emotion 으로 개발된 리액트 컴포넌트 라이브러리입니다.
 
+![preview](./preview.png)
+
 ## Documentation
 
 https://superb-smash-912.notion.site/jb-design-system-1261bcf86dd380eb9614cca8daee001f?pvs=4
