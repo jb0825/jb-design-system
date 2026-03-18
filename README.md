@@ -8,6 +8,15 @@ React, typescript, emotion 으로 개발된 리액트 컴포넌트 라이브러�
 
 https://superb-smash-912.notion.site/jb-design-system-1261bcf86dd380eb9614cca8daee001f?pvs=4
 
+## Start
+
+❕패키지 매니저를 yarn -> pnpm 으로 변경함 (26.03.18)
+
+```
+pnpm install
+pnpm start
+```
+
 ## Data Display
 
 정보를 시각적으로 표현하는 컴포넌트입니다.
